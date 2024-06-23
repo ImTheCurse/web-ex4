@@ -12,3 +12,4 @@ function updateHeader(data) {
     const profileFullName = document.getElementById('user_full_name');
     profileFullName.innerHTML += `${data.users_data[0].first_name} ${data.users_data[0].last_name}`;
 }
+
