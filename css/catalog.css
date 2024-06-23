@@ -1,0 +1,110 @@
+
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    display: inline-flex;
+    background-color:#f2f2f2 ;
+}
+
+nav{
+    height: 100%;
+}
+
+#sidebar{
+    display: flex;
+    height: 100%;
+}
+
+#sidebar .bg-primary{
+    background-color: #052C65 !important;
+}
+
+.d-flex{
+    width: 300px;
+    height: 90px;
+    padding-top: 50px;
+}
+
+.d-flex > ul a:hover{
+    background-color: #0d6efd;
+}
+
+.nav-link img{
+    margin-right: 10px;
+}
+
+header{
+    width: 100%;
+    height: 120px;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav ul{
+    list-style-type: none;
+}
+
+nav ul li{
+    margin-bottom: 10px;
+}
+
+#util-links li:hover{
+    border-radius: 20%;
+}
+
+#logo{
+    width: 200px;
+    height: 200px;
+    margin-right: 80px;
+    margin-bottom: 30px;
+}
+
+.navbar_bg-body-tertiary{
+    width: 100%;
+}
+
+
+.container-fluid{
+    display: flex;
+    /* padding-top: 50px; */
+    justify-content: space-between;
+}
+
+#header_title{
+    justify-self: flex-start;
+    padding-left: 50px;
+    padding-top: 20px;
+}
+
+#header_title h5{
+    color:gray;
+}
+
+#search_bar{
+    padding-top: 50px;
+}
+
+.form-control{
+    background-color:#f2f2f2 ;
+}
+
+#profile_picture{
+    margin-top: 50px;
+    width: 40px;
+    height: 40px;
+    margin-right: 150px;
+}
+
+.dropdown{
+    margin-right: 150px;
+    width: 100px;
+}
+
+#contact_us, #settings, #logout, #help{
+    background-color: #052C65;
+}
