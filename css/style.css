@@ -16,7 +16,10 @@ body{
 }
 
 .container-fluid h3{
-    margin-right:400px;
+    /* margin-right:400px; */
+    justify-content: flex-start;
+    padding-right: 400px;
+    padding-left: 50px;
 }
 
 nav{
@@ -35,7 +38,7 @@ header{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    justify-content: center;
+    /* justify-content: center; */
 
 }
 
