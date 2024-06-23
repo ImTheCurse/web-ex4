@@ -1,0 +1,20 @@
+{
+    "title" : "Users",
+    "users_data" : [
+        {
+            "first_name" : "Daniel",
+            "last_name" : "Ozeri",
+            "age" : "17"
+        },
+        {
+            "first_name" : "Maya",
+            "last_name" : "Revivo",
+            "age" : "14"
+        },
+        {
+            "first_name" : "Shay",
+            "last_name" : "Zinger",
+            "age" : "37"
+        }
+    ]
+}
