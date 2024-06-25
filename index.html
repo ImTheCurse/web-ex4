@@ -10,7 +10,8 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/style.css">
-  <script src="JS/js_header.js"></script>
+  <script src="JS/simulationHandlers.js" type="module"></script>
+  <script src="JS/js_header.js" type="module"></script>
   <title>AeroSim</title>
 </head>
 
@@ -105,14 +106,6 @@
         
   </section>
 
-    
-
-
-
-
-
-
-
   <section class="right-section">
       <nav class="navbar_bg-body-tertiary">
         <div class="container-fluid">
@@ -145,7 +138,7 @@
 
     <div class="content-area">
       <div id="card-container">
-        <div class="card">
+        <div class="card" id="progression-card">
           <div class="card-body">
             <span class="card-title-span">
               <img id="progress-img" src="images/Progress_blue.png" alt="Progress Icon">
@@ -160,7 +153,7 @@
           <button type="button" class="btn btn-primary">Continue</button>
         </div>
 
-        <div class="card">
+        <div class="card" id="catalog-card">
           <div class="card-body">
             <span class="card-title-span">
               <img src="images/basket_blue.png" alt="Progress Icon">
@@ -177,7 +170,28 @@
           </div>
         </div>
 
-        
+        <div class="card" id="simulations-card">
+          <div class="card-body">
+            <span class="card-title-span">
+              <img src="images/library-blue.svg" alt="libarary Icon">
+              <h3 class="card-title">My Simulations</h3>
+            </span>
+            <table>
+              <thead class="table-row">
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Date</th>
+                <th scope="col">Difficulty</th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </thead>
+              <tbody></tbody>
+            </table>
+            
+          </div>
+          <button type="button" id="simulation-card-btn" class="btn btn-primary">View All</button>
+        </div>          
 
 
       </div>

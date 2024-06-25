@@ -2,19 +2,73 @@
     "title" : "Users",
     "users_data" : [
         {
+            "user_id" : 1,
             "first_name" : "Daniel",
             "last_name" : "Ozeri",
-            "age" : "17"
+            "age" : 17,
+            "simulations":[
+                {
+                    "name":"spoiler",
+                    "date": "20/01/2022",
+                    "difficulty": 2
+                },
+                {
+                    "name":"Airplane",
+                    "date": "22/02/2022",
+                    "difficulty": 3
+                },
+                {
+                    "name":"Range Rover",
+                    "date": "22/02/2022",
+                    "difficulty": 3
+                }
+            ]
         },
         {
+            "user_id": 2,
             "first_name" : "Maya",
             "last_name" : "Revivo",
-            "age" : "14"
+            "age" : 14,
+            "simulations":[
+                {
+                    "name":"spoiler",
+                    "date": "20/01/2022",
+                    "difficulty": 2
+                },
+                {
+                    "name":"Airplane",
+                    "date": "22/02/2022",
+                    "difficulty": 3
+                },
+                {
+                    "name":"Range Rover",
+                    "date": "22/02/2022",
+                    "difficulty": 3
+                }
+            ]  
         },
         {
+            "user_id": 3,
             "first_name" : "Shay",
             "last_name" : "Zinger",
-            "age" : "37"
+            "age" : 37,
+            "simulations":[
+                {
+                    "name":"spoiler",
+                    "date": "20/01/2022",
+                    "difficulty": 2
+                },
+                {
+                    "name":"Airplane",
+                    "date": "22/02/2022",
+                    "difficulty": 3
+                },
+                {
+                    "name":"Range Rover",
+                    "date": "22/02/2022",
+                    "difficulty": 3
+                }
+            ]
         }
     ]
 }
