@@ -3,6 +3,7 @@
     "catalog_data" : [
         {
             "name" : "Rocket",
+            "creator_name":"Diabolica",
             "creator_id" : 1,
             "date" : "12/03/2022",
             "views" : "1992",
@@ -10,6 +11,7 @@
         },
         {
             "name" : "Train",
+            "creator_name":"Julio",
             "creator_id" : 7,
             "date" : "30/03/2023",
             "views" : "9923",
@@ -17,6 +19,7 @@
         },
         {
             "name" : "Plane",
+            "creator_name":"THe terminator",
             "creator_id" : 55,
             "date" : "21/07/2021",
             "views" : "1192",
@@ -24,6 +27,7 @@
         },
         {
             "name" : "Football",
+            "creator_name":"Neymar",
             "creator_id" : 1050,
             "date" : "04/09/2022",
             "views" : "1733",
@@ -31,13 +35,15 @@
         },
         {
             "name" : "Ferrari 458",
+            "creator_name":"RaniTHeCurse",
             "creator_id" : 4,
             "date" : "25/01/2020",
             "views" : "1001",
             "likes" : "632"
         },
         {
-            "name" : "Fire hydrent",
+            "name" : "Fire Hydrant",
+            "creator_name":"OriTheBlessing",
             "creator_id" : 77,
             "date" : "17/05/2023",
             "views" : "2613",
@@ -45,6 +51,7 @@
         },
         {
             "name" : "Fence",
+            "creator_name":"Jimjim",
             "creator_id" : 43,
             "date" : "11/10/2021",
             "views" : "400",
@@ -52,6 +59,7 @@
         },
         {
             "name" : "Guitar",
+            "creator_name":"Maya Revivo",
             "creator_id" : 820,
             "date" : "20/02/2024",
             "views" : "3509",
@@ -59,6 +67,7 @@
         },
         {
             "name" : "Bench",
+            "creator_name":"Forrest Gump",
             "creator_id" : 117,
             "date" : "31/12/2023",
             "views" : "4321",
