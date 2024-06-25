@@ -4,17 +4,17 @@
         {
             "first_name" : "Daniel",
             "last_name" : "Ozeri",
-            "age" : "17"
+            "age" : 17
         },
         {
             "first_name" : "Maya",
             "last_name" : "Revivo",
-            "age" : "14"
+            "age" : 14
         },
         {
             "first_name" : "Shay",
             "last_name" : "Zinger",
-            "age" : "37"
+            "age" : 37
         }
     ]
 }
