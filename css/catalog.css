@@ -1,5 +1,4 @@
 
-
 body{
     display: flex;
     height: 100%;
@@ -29,7 +28,6 @@ body{
     width: calc(100vw - 300px);
 }
 
-
 .container-fluid{
     display: flex;
     align-items: center;
@@ -37,12 +35,24 @@ body{
     margin-bottom: 20px;
     justify-content: space-between;
 }
+
 #search_bar{
     margin-left: 30px;
     margin-right: 80px;
 }
-#header_title{
+
+#search_bar .form-control{
+    background-color: #f2f2f2;
+    border-radius: 34px;
+}
+
+
+#header_title {
     width: 40vw;
+}
+
+#header_title h5{
+    color: gray;
 }
 
 #card-container{
@@ -59,6 +69,10 @@ body{
     border-radius: 34px;
     border: 0px;
 }
+.card-body .span-desc{
+    margin-left: 40px;
+    color: gray;
+}
 
 #card-title-span h3{
     font-size: 25px;
@@ -67,7 +81,7 @@ body{
 
 #card-title-span h6{
     font-size: 15px;
-    color: grey;
+    color: #969696;
 }
 
 #card-title-span img{
@@ -117,6 +131,7 @@ body{
     margin-left: 60px;
     margin-bottom: 10px;
 }
+
 #search-icon{
     margin-left: 60px;
 }
