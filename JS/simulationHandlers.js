@@ -35,7 +35,6 @@ async function populateSimulationHome(){
         const dupImg = document.createElement('img');
         dupImg.src = 'images/duplicate.svg';
         dupImg.alt = 'Duplicate Icon';
-        dupImg.onclick = handleDuplicate;
         duplicate.appendChild(dupImg);
 
         let trash = document.createElement('td');
@@ -55,6 +54,8 @@ async function populateSimulationHome(){
         tableRow.appendChild(name);
         tableRow.appendChild(date);
         tableRow.appendChild(difficulty);
+
+        dupImg.onclick = (()=> handleDuplicate(tableRow));
         tableRow.appendChild(duplicate);
 
         trashImg.onclick = (() => handleTrash(tableRow));
@@ -72,7 +73,32 @@ async function populateSimulationHome(){
 
 function handleTrash(toDel){
     toDel.remove(); 
+    decreaseSimCardHeight();
     
 }
-function handleDuplicate(){}
+function handleDuplicate(toDup){
+    const parent = toDup.parentNode;
+    const node = toDup.cloneNode(toDup);
+
+    const dupButton = node.querySelector('img');
+    dupButton.onclick = (() => handleDuplicate(node));
+    const trashButton = node.getElementsByTagName('img')[1];
+    trashButton.onclick = (() => handleTrash(node));
+
+    parent.appendChild(node);
+    increaseSimCardHeight(); 
+}
 function handleSimViewButton(tableIndex){}
+
+function increaseSimCardHeight(){
+    const simCard = document.getElementById('simulations-card');
+    const height = simCard.offsetHeight + 109; // 10 vh
+    simCard.style.height = height + 'px';
+}
+
+function decreaseSimCardHeight(){
+    const simCard = document.getElementById('simulations-card');
+    const height = simCard.offsetHeight - 109; // 10 vh
+    simCard.style.height = height + 'px';
+
+}
