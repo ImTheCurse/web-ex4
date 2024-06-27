@@ -137,6 +137,25 @@
       </nav>
 
     <div class="content-area">
+
+      <!-- Modal -->
+      <div class="modal fade" id="SearchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="input-group flex-nowrap">
+                <input type="text" class="form-control" id="Search-bar-modal" placeholder="Search Catalog" aria-label="Username" aria-describedby="addon-wrapping" >
+                <button class="btn btn-primary" >search</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
       <div id="card-container">
         <div class="card" id="progression-card">
           <div class="card-body">
@@ -167,7 +186,7 @@
               <a href="catalog.html">
                 <button id="btn-span-1" type="button" class="btn btn-primary">Explore</button>
               </a>
-              <button id="btn-span-2" type="button" class="btn btn-primary">Search</button>
+              <button id="btn-span-2" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#SearchModal">Search</button>
             </span>
           </div>
         </div>
