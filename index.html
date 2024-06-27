@@ -53,16 +53,13 @@
                 </svg>
                 <img src="images/AeroSim_Library_Books_Icon_1(1) 1.svg" alt="Library Icon">
                 Simulations
-              </a>
             </li>
             <li>
-              <a href="#" class="nav-link text-white">
                 <svg class="bi me-2" width="16" height="16">
                   <use xlink:href="#grid"></use>
                 </svg>
                 <img src="images/AeroSim_Progress_Check_Icon_1(1) 1.svg" alt="Progress Icon">
                 Progression
-              </a>
             </li>
           </ul>
 
@@ -148,7 +145,9 @@
             <div class="modal-body">
               <div class="input-group flex-nowrap">
                 <input type="text" class="form-control" id="Search-bar-modal" placeholder="Search Catalog" aria-label="Username" aria-describedby="addon-wrapping" >
-                <button class="btn btn-primary" >search</button>
+                <a href="catalog.html">
+                  <button class="btn btn-primary" id="search-btn-modal" onclick="searchInCatalog()" >search</button>
+                </a>
               </div>
             </div>
           </div>
@@ -211,7 +210,8 @@
             </table>
             
           </div>
-          <button type="button" id="simulation-card-btn" class="btn btn-primary">View All</button>
+          <button type="button" id="simulation-card-btn" class="btn btn-primary" 
+          onclick="window.location.href = 'simulations.html';">View All</button>
         </div>          
 
 

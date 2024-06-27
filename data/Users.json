@@ -36,6 +36,12 @@
                     "name":"Golf ball",
                     "date":"14/05/2024",
                     "difficulty":1
+                },
+                {
+                    "sim_id" : 515,
+                    "name":"Toast",
+                    "date":"11/03/2024",
+                    "difficulty":2
                 }
             ]
         },

@@ -1,20 +1,19 @@
 import * as header from "./js_header.js";
 window.onload = () =>{
-    populateSimulationHome();
+    populateSimulationHome(5);
     header.updateHeader();
 
 }
 
-async function populateSimulationHome(){
+export async function populateSimulationHome(maxLength){
     const tableData = await fetch('../data/Users.json').then((response) => response.json()).then((obj)=> obj.users_data);
-    const tableLength = await tableData[0].simulations.length;
+    let tableLength = await tableData[0].simulations.length;
     const tableBody = document.getElementsByTagName('table')[0].getElementsByTagName('tbody')[0];
 
     //limit number of simulations in home page.
-    if(tableLength > 5){
-        tableLength = 5;
+    if(tableLength > maxLength){
+        tableLength = maxLength;
     }
-
     //Load data into table row element
     for(let i = 0; i < tableLength;i++){
         const tableID = document.createElement('td');
@@ -73,7 +72,7 @@ async function populateSimulationHome(){
 
 function handleTrash(toDel){
     toDel.remove(); 
-    decreaseSimCardHeight();
+    decreaseSimCardHeight(toDel);
     
 }
 function handleDuplicate(toDup){
@@ -86,19 +85,28 @@ function handleDuplicate(toDup){
     trashButton.onclick = (() => handleTrash(node));
 
     parent.appendChild(node);
-    increaseSimCardHeight(); 
+    increaseSimCardHeight(node); 
 }
 function handleSimViewButton(tableIndex){}
 
-function increaseSimCardHeight(){
+function increaseSimCardHeight(node){
     const simCard = document.getElementById('simulations-card');
-    const height = simCard.offsetHeight + 109; // 10 vh
+    const nodeHeight = node.offsetHeight;
+    const margin = document.querySelector('simulations-card').style.marginBottom;
+    const height = simCard.offsetHeight + nodeHeight - margin;
     simCard.style.height = height + 'px';
 }
 
-function decreaseSimCardHeight(){
+function decreaseSimCardHeight(node){
     const simCard = document.getElementById('simulations-card');
-    const height = simCard.offsetHeight - 109; // 10 vh
+    const nodeHeight = node.offsetHeight;
+    const margin = document.querySelector('simulations-card').style.marginBottom;
+    const height = simCard.offsetHeight - nodeHeight + margin;
     simCard.style.height = height + 'px';
 
+}
+
+function saveToStoreage(){
+
+    sessionStorage.setItem('')
 }
