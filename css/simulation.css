@@ -44,22 +44,17 @@
 }
 
 #inputs_area{
-    display: none;
-    height: 30vh;
     width: 20vw;
-    position: absolute;
-    justify-self: end;
-    margin-top: -20vh;
+
 }
 
 #sim-sidebar{ 
-    justify-self: start;
+    height: 100%;
 }
 
 #analysis-section ,#input-section{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
     margin-left: 10px;
     margin-top: 10px;
 
@@ -71,26 +66,30 @@
 
 #sim-sidebar-inputs{
     display: block;
-    height: 500px;
-    width: 20vw;
-    background-color: rgb(255, 255, 255);
+    height: 200px;
+    width: 17vw;
     position: absolute;
+    background-color: rgb(255, 255, 255);
     justify-self: end;
     margin-top: -20vh;
+    z-index: 10;
 }
 
 #inputs_area{
-    display: block;
+    display: none;
     margin-top: 10px;
 }
 
 #sim-sidebar button{
     width: 150px;
     height: 50px;
-    margin-top: 30px;
     margin-left: 50px;
     border-radius: 34px;
-    margin-top: 300px;
 }
+
+#arrow-inputs{
+    cursor: pointer;
+}
+
 
 

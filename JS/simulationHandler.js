@@ -34,10 +34,19 @@ function ZoomOut() {
 
 function handleDropdownInputs(){
     const inputs = document.getElementById('inputs_area');
-    
-    inputs.style.display = 'block';
-    console.log('hello ori');
-}
+    const btn = document.getElementById('sim-btn');
+    const sidebar = document.getElementById('sim-sidebar-inputs');
+    if(inputs.style.display == 'none' || inputs.style.display == ''){
+        inputs.style.display = 'block';
+        // btn.style.marginTop = '10px';
+        sidebar.style.height = '500px';
+        sidebar.style.marginTop = '-20vh';
+    }
+    else{
+        inputs.style.display = 'none';
+        sidebar.style.height = '200px';
+    }
+   }
 
 document.addEventListener('DOMContentLoaded', () => {
     const hoverController = document.getElementById('hoverController');
