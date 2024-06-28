@@ -109,7 +109,13 @@
           <div id="header_title">
             <h3>Simulate an existing project</h3>
             <h5>understand the beauty of aerodynamics.</h5>
-            <h6>Home / Simulations / simulation name</h6>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page"><a href="catalog.html">Community catalog</a></li>
+                  <li class="breadcrumb-item active" aria-current="page"> simulation</li>
+                </ol>
+            </nav>
           </div>
           <div id="search_bar">
             <input class="form-control me-2" type="search" id="search_input" placeholder="Search" aria-label="Search">
@@ -142,39 +148,31 @@
                 <img src="images/Img_Expand.svg" alt="Img_Expand" class="inputImg" id="Expand" draggable="false">
                 <img src="images/Img_Curser.svg" alt="Img_Curser" class="inputImg" id="Curser" draggable="false">
             </div>
-
             <div id="sim-sidebar-inputs" >
                 <div id="sim-sidebar">
-                <section id="analysis-section">
-                  <img src="images/Arrow_Left_5.svg" alt="arrow button">
-                  <h2>Analysis</h2> 
-                  <img src="images/AeroSim_Addchart_Icon_1 1.svg" alt="Chart Icon">
-                </section>
-              
-                <section id="input-section">
-                  <img src="images/Arrow_Left_5.svg" onclick="handleDropdownInputs()" alt="arrow button"id="arrow-inputs">
-                  <h2>Inputs</h2>
-                  <img src="images/AeroSim_Weather_Lightning_Rainy_Icon_1 1.svg" alt="Weather Icon" >
-                </section>
-                <div id="inputs_area">
-                <label for="customRange1" class="form-label">Air density</label>
-                <input type="range" class="form-range" id="customRange1">
-                <label for="customRange1" class="form-label">Angle of attack</label>
-                <input type="range" class="form-range" id="customRange2">
-                <label for="customRange1" class="form-label">Humidity</label>
-                <input type="range" class="form-range" id="customRange3">
-                <label for="customRange1" class="form-label">Temperature</label>
-                <input type="range" class="form-range" id="customRange4">
-            </div>
-
-                <button class="btn btn-primary" id="sim-btn">Simulate</button>
+                  <section id="analysis-section">
+                    <img src="images/Arrow_Left_5.svg" alt="arrow button">
+                    <h2>Analysis</h2> 
+                    <img src="images/AeroSim_Addchart_Icon_1 1.svg" alt="Chart Icon">
+                  </section>
+                  <section id="input-section">
+                    <img src="images/Arrow_Left_5.svg" onclick="handleDropdownInputs()" alt="arrow button"id="arrow-inputs">
+                    <h2>Inputs</h2>
+                    <img src="images/AeroSim_Weather_Lightning_Rainy_Icon_1 1.svg" alt="Weather Icon" >
+                  </section>
+                  <div id="inputs_area">
+                    <label for="customRange1" class="form-label">Air density</label>
+                    <input type="range" class="form-range" id="customRange1">
+                    <label for="customRange1" class="form-label">Angle of attack</label>
+                    <input type="range" class="form-range" id="customRange2">
+                    <label for="customRange1" class="form-label">Humidity</label>
+                    <input type="range" class="form-range" id="customRange3">
+                    <label for="customRange1" class="form-label">Temperature</label>
+                    <input type="range" class="form-range" id="customRange4">
+                  </div>
+                  <button class="btn btn-primary" id="sim-btn">Simulate</button>
               </div>
-
-              
-
-
-            </div>
-                          
+            </div>                
         </div>
     </div>
   </section>

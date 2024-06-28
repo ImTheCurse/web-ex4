@@ -78,13 +78,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', function() {
     const imageContainer = document.getElementById('card-container');
-
+    
     imageContainer.addEventListener('click', function(event) {
         if (event.target.tagName === 'IMG') {
             const imageUrl = event.target.src;
-            console.log(imageUrl);
-            console.log('Redirecting to:', `simulation.html?img=${encodeURIComponent(imageUrl)}`);
+            const titleSpan = event.target.parentNode;
+            const title = titleSpan.getElementsByTagName('h3')[0];
+            const cardBody = titleSpan.parentNode;
+
+            const date = cardBody.getElementsByClassName('span-desc')[0].outerHTML.split('|')[0].split('>')[2].trim();
+            sessionStorage.setItem('model-date',date);
+            sessionStorage.setItem('model-name',title.textContent);
             window.location.href = `simulation.html?img=${imageUrl}`;
         }
     });
 });
+
+
+// step 1: merge 2 branches
+// step 2: add onclick for each view button
+// step 3: inside onclick, redirect to location href
+// step 4: convert to ori's format.
