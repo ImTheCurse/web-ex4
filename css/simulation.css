@@ -1,0 +1,38 @@
+
+
+#simulation-area{
+    height: 100vh;
+    width: calc(100vw - 300px);
+    display: grid;
+    align-items: center;
+    position: relative;
+}
+
+#simulation-img{
+    height: 50vh;
+    width: 50vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+    justify-self: center;
+    position: relative;
+}
+
+
+#hoverController{
+    height: 7vh;
+    width: 40vw;
+    background-color: greenyellow;
+    position: absolute;
+    justify-self: start;
+    margin-top: -70vh;
+    margin-left: 10vh;
+}
+
+#inputs_area{
+    height: 30vh;
+    width: 20vw;
+    background-color: red;
+    position: absolute;
+    justify-self: end;
+    margin-top: -20vh;
+}

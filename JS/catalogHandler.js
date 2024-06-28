@@ -32,12 +32,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const titleSpan = document.createElement('span');
             titleSpan.id = 'card-title-span';
 
-            const link = document.createElement('a');
-            link.href = 'simulations.html';
+            // const link = document.createElement('a');
+            // link.href = 'simulation.html';
             const img = document.createElement('img');
-            img.src = `images/Img_${item.name}.svg`; 
-            img.alt = `Img_${item.name}`;
-            link.appendChild(img);
+            img.src = `images/Img_${item.ImgID}.svg`; 
+            img.alt = `Img_${item.ImgID}`;
+            // link.appendChild(img);
+            titleSpan.appendChild(img);
 
             const title = document.createElement('h3');
             title.className = 'card-title';
@@ -46,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const creator = document.createElement('h6');
             creator.textContent = `By ${item.creator_name}`; // Replace with creator's name if available
 
-            titleSpan.appendChild(link);
+            // titleSpan.appendChild(link);
             titleSpan.appendChild(title);
             titleSpan.appendChild(creator);
 
@@ -62,7 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
             cardContainer.appendChild(card);
         });
     }
-
     // Search functionality
     const searchInput = document.getElementById('search_input');
 
@@ -76,3 +76,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const imageContainer = document.getElementById('card-container');
+
+    imageContainer.addEventListener('click', function(event) {
+        if (event.target.tagName === 'IMG') {
+            const imageUrl = event.target.src;
+            console.log(imageUrl);
+            console.log('Redirecting to:', `simulation.html?img=${encodeURIComponent(imageUrl)}`);
+            window.location.href = `simulation.html?img=${imageUrl}`;
+        }
+    });
+});
