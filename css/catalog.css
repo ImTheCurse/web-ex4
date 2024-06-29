@@ -138,3 +138,7 @@ body{
 #search-icon{
     margin-left: 60px;
 }
+
+.breadcrumb a{
+    color: black;
+}
