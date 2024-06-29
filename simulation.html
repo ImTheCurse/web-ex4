@@ -9,8 +9,10 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/catalog.css">
+  <link rel="stylesheet" href="css/simulation.css">
   <script src="JS/js_header.js"></script>  
-  <script src="JS/catalogHandler.js"></script>
+  <script src="JS/simulationHandler.js"></script>  
+  <!-- <script src="JS/catalogHandler.js"></script> -->
   <title>AeroSim</title>
 </head>
 <body>
@@ -36,7 +38,7 @@
               </a>
             </li>
             <li>
-              <a href="catalog.html" class="nav-link active">
+              <a href="catalog.html" class="nav-link text-white">
                 <svg class="bi me-2" width="16" height="16">
                   <use xlink:href="#speedometer2"></use>
                 </svg>
@@ -105,13 +107,14 @@
       <nav class="navbar_bg-body-tertiary">
         <div class="container-fluid">
           <div id="header_title">
-            <h3>Explore your favorite model</h3>
-            <h5>ex. Airplane, Train, Shoe ...</h5>
+            <h3>Simulate an existing project</h3>
+            <h5>understand the beauty of aerodynamics.</h5>
             <nav aria-label="breadcrumb">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Community catalog</li>
-              </ol>
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page"><a href="catalog.html">Community catalog</a></li>
+                  <li class="breadcrumb-item active" aria-current="page"> simulation</li>
+                </ol>
             </nav>
           </div>
           <div id="search_bar">
@@ -135,8 +138,42 @@
         </div>
       </nav>
     <div class="content-area">
-      <div id="card-container">
-      </div>
+        <div id="simulation-area">
+            <div id="simulation-img"></div>
+            <div id="hoverController" draggable="true">
+                <img src="images/Img_ZoomOut.svg" alt="Img_ZoomOut" class="inputImg" id="ZoomOut" draggable="false" onclick="ZoomOut()">
+                <img src="images/Img_ZoomIn.svg" alt="Img_ZoomOut" class="inputImg" id="ZoomIn" draggable="false" onclick="ZoomIn()">
+                <img src="images/Img_Backward.svg" alt="Img_Backward" class="inputImg" id="Backward" draggable="false">
+                <img src="images/Img_Forward.svg" alt="Img_Forward" class="inputImg" id="Forward" draggable="false">
+                <img src="images/Img_Expand.svg" alt="Img_Expand" class="inputImg" id="Expand" draggable="false">
+                <img src="images/Img_Curser.svg" alt="Img_Curser" class="inputImg" id="Curser" draggable="false">
+            </div>
+            <div id="sim-sidebar-inputs" >
+                <div id="sim-sidebar">
+                  <section id="analysis-section">
+                    <img src="images/Arrow_Left_5.svg" alt="arrow button">
+                    <h2>Analysis</h2> 
+                    <img src="images/AeroSim_Addchart_Icon_1 1.svg" alt="Chart Icon">
+                  </section>
+                  <section id="input-section">
+                    <img src="images/Arrow_Left_5.svg" onclick="handleDropdownInputs()" alt="arrow button"id="arrow-inputs">
+                    <h2>Inputs</h2>
+                    <img src="images/AeroSim_Weather_Lightning_Rainy_Icon_1 1.svg" alt="Weather Icon" >
+                  </section>
+                  <div id="inputs_area">
+                    <label for="customRange1" class="form-label">Air density</label>
+                    <input type="range" class="form-range" id="customRange1">
+                    <label for="customRange1" class="form-label">Angle of attack</label>
+                    <input type="range" class="form-range" id="customRange2">
+                    <label for="customRange1" class="form-label">Humidity</label>
+                    <input type="range" class="form-range" id="customRange3">
+                    <label for="customRange1" class="form-label">Temperature</label>
+                    <input type="range" class="form-range" id="customRange4">
+                  </div>
+                  <button class="btn btn-primary" id="sim-btn">Simulate</button>
+              </div>
+            </div>                
+        </div>
     </div>
   </section>
 </body>
