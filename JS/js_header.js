@@ -1,6 +1,7 @@
 export {updateHeader}
 
 function updateHeader() {
+    console.log('GET {domain}/users/user_name');
     fetch("../data/Users.json")
     .then(response => response.json())
     .then(data => {

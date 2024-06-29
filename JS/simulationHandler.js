@@ -101,4 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const titleElem = document.createElement('h2');
     titleElem.textContent = fullTitle;
     contentArea.insertBefore(titleElem,contentArea.firstChild);
+    console.log('GET {domain}/model_name');
+    console.log('GET {domain}/model_date');
+
   }

@@ -16,9 +16,17 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => console.error('Error fetching catalog data:', error));
 
     function displayCards(data) {
+        
         const cardContainer = document.getElementById('card-container');
         cardContainer.innerHTML = ''; 
         data.forEach(item => {
+            console.log('GET {domain}/model_name');
+            console.log('GET {domain}/model_image');
+            console.log('GET {domain}/model_date');
+            console.log('GET {domain}/model_likes');
+            console.log('GET {domain}/model_views');
+            console.log('GET {domain}/model_creator_name');
+
             const card = document.createElement('div');
             card.className = 'card';
 

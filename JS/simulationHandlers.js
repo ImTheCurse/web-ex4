@@ -1,5 +1,7 @@
 import * as header from "./js_header.js";
 window.onload = () =>{
+    console.log('GET {domain}/model_name');
+    console.log('GET {domain}/model_date');
     populateSimulationHome(5);
     header.updateHeader();
 
@@ -71,16 +73,21 @@ export async function populateSimulationHome(maxLength){
 function handleTrash(toDel){
     toDel.remove(); 
     decreaseSimCardHeight(toDel);
+    console.log('DELETE {domain}/model');
     
 }
 function handleDuplicate(toDup){
+    console.log('POST {domain}/model');
     const parent = toDup.parentNode;
     const node = toDup.cloneNode(toDup);
+    const button = toDup.getElementsByTagName('button')[0];
 
     const dupButton = node.querySelector('img');
     dupButton.onclick = (() => handleDuplicate(node));
     const trashButton = node.getElementsByTagName('img')[1];
     trashButton.onclick = (() => handleTrash(node));
+    node.getElementsByTagName('button')[0].onclick = button.onclick;
+    
 
     parent.appendChild(node);
     increaseSimCardHeight(node); 
