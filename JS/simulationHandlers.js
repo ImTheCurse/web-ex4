@@ -10,11 +10,9 @@ export async function populateSimulationHome(maxLength){
     let tableLength = await tableData[0].simulations.length;
     const tableBody = document.getElementsByTagName('table')[0].getElementsByTagName('tbody')[0];
 
-    //limit number of simulations in home page.
     if(tableLength > maxLength){
         tableLength = maxLength;
     }
-    //Load data into table row element
     for(let i = 0; i < tableLength;i++){
         const tableID = document.createElement('td');
         const name = document.createElement('td');
@@ -92,21 +90,18 @@ function handleSimViewButton(tableIndex){}
 function increaseSimCardHeight(node){
     const simCard = document.getElementById('simulations-card');
     const nodeHeight = node.offsetHeight;
-    const margin = document.querySelector('simulations-card').style.marginBottom;
-    const height = simCard.offsetHeight + nodeHeight - margin;
+    const margin =  window.getComputedStyle(simCard).marginBottom;
+    const height = simCard.offsetHeight + nodeHeight - margin ;
     simCard.style.height = height + 'px';
 }
 
 function decreaseSimCardHeight(node){
     const simCard = document.getElementById('simulations-card');
     const nodeHeight = node.offsetHeight;
-    const margin = document.querySelector('simulations-card').style.marginBottom;
+    const margin =  window.getComputedStyle(simCard).marginBottom;
     const height = simCard.offsetHeight - nodeHeight + margin;
     simCard.style.height = height + 'px';
 
 }
 
-function saveToStoreage(){
 
-    sessionStorage.setItem('')
-}

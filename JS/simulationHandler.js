@@ -1,7 +1,8 @@
+import {updateHeader} from './js_header.js';
 document.addEventListener('DOMContentLoaded', function() {
     
     const simulationImg = document.getElementById('simulation-img');
-    
+    updateHeader(); 
     if (simulationImg) {
         function getQueryParameter(name) {
             const urlParams = new URLSearchParams(window.location.search);
@@ -9,13 +10,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         const imageUrl = getQueryParameter('img');
-        console.log(imageUrl);
         loadSimName();
         if (imageUrl) {
-            console.log('Setting background image to:', imageUrl);
             simulationImg.style.backgroundImage = `url(${imageUrl})`;
         } else {
-            simulationImg.style.backgroundColor = 'gray'; // Fallback background color
+            simulationImg.style.backgroundColor = 'gray'; 
             console.error('Image URL not found in query parameters');
         }
     } else {
@@ -40,7 +39,6 @@ function handleDropdownInputs(){
     const sidebar = document.getElementById('sim-sidebar-inputs');
     if(inputs.style.display == 'none' || inputs.style.display == ''){
         inputs.style.display = 'block';
-        // btn.style.marginTop = '10px';
         sidebar.style.height = '500px';
         sidebar.style.marginTop = '-20vh';
     }
@@ -49,6 +47,16 @@ function handleDropdownInputs(){
         sidebar.style.height = '200px';
     }
    }
+
+document.getElementById('ZoomOut').addEventListener('click', ()=>{
+    ZoomOut();
+});
+document.getElementById('ZoomIn').addEventListener('click', () => {
+    ZoomIn();
+});
+document.getElementById('arrow-inputs').addEventListener('click', ()=>{
+    handleDropdownInputs();
+})
 
 document.addEventListener('DOMContentLoaded', () => {
     const hoverController = document.getElementById('hoverController');

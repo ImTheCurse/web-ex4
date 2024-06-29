@@ -14,7 +14,7 @@ export function handleSearchFromHome(){
     
 }
 
-function insertInputData(){
+export function insertInputData(){
     const newInputBar = document.getElementById('search_input');
     newInputBar.value = sessionStorage.getItem('input-value');
     newInputBar.focus();
@@ -23,9 +23,10 @@ function insertInputData(){
 
 }
 
-if(window.location.href == 'http://127.0.0.1:5501/index.html'){
+if(document.getElementById('search-btn-modal') != null){
     document.getElementById('search-btn-modal').addEventListener('click',()=>{
-    handleSearchFromHome();
-})
+        handleSearchFromHome();
+    })
 }
+
 
