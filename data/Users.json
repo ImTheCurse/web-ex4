@@ -9,39 +9,38 @@
             "simulations":[
                 {
                     "sim_id": 381,
-                    "name":"spoiler",
+                    "name":"Rocket",
                     "date": "20/01/2022",
-                    "difficulty": 2
+                    "difficulty": 2,
+                    "ImgID" : 1
                 },
                 {
                     "sim_id":208, 
-                    "name":"Airplane",
+                    "name":"Train",
                     "date": "22/02/2022",
-                    "difficulty": 3
+                    "difficulty": 3,
+                    "ImgID" : 2
                 },
                 {
                     "sim_id":221, 
-                    "name":"Range Rover",
+                    "name":"Plane",
                     "date": "22/02/2022",
-                    "difficulty": 3
+                    "difficulty": 3,
+                    "ImgID" : 3
                 },
                 {
                     "sim_id": 246,
-                    "name": "F1 car",
+                    "name": "Football",
                     "date":"11/08/2019",
-                    "difficulty":4
+                    "difficulty":4,
+                    "ImgID" : 4
                 },
                 {
                     "sim_id" : 115,
-                    "name":"Golf ball",
+                    "name":"Ferrari 458",
                     "date":"14/05/2024",
-                    "difficulty":1
-                },
-                {
-                    "sim_id" : 515,
-                    "name":"Toast",
-                    "date":"11/03/2024",
-                    "difficulty":2
+                    "difficulty":1,
+                    "ImgID" : 5
                 }
             ]
         },

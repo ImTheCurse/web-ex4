@@ -42,7 +42,7 @@ export async function populateSimulationHome(maxLength){
         const btn = document.createElement('td');
         button.textContent = 'View';
         button.className = 'btn btn-primary';
-        button.onclick = handleSimViewButton;
+        button.onclick = (()=> handleSimViewButton(i));
         button.style.marginTop = '20px';
         btn.appendChild(button);
 
@@ -85,7 +85,16 @@ function handleDuplicate(toDup){
     parent.appendChild(node);
     increaseSimCardHeight(node); 
 }
-function handleSimViewButton(tableIndex){}
+async function handleSimViewButton(index){
+    const tableData = await fetch('../data/Users.json').then((response) => response.json()).then((obj)=> obj.users_data);
+    const model = tableData[0].simulations[index];
+    const imgID = model.ImgID;
+    const imgURL = `http://127.0.0.1:5500/simulation.html?img=http://127.0.0.1:5500/images/Img_${imgID}.svg`;
+    sessionStorage.setItem('model-date',model.date);
+    sessionStorage.setItem('model-name',model.name);
+    window.location.href = imgURL;
+
+}
 
 function increaseSimCardHeight(node){
     const simCard = document.getElementById('simulations-card');
