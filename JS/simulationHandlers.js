@@ -8,7 +8,7 @@ window.onload = () =>{
 }
 
 export async function populateSimulationHome(maxLength){
-    const tableData = await fetch('../data/Users.json').then((response) => response.json()).then((obj)=> obj.users_data);
+    const tableData = await fetch('./data/Users.json').then((response) => response.json()).then((obj)=> obj.users_data);
     let tableLength = await tableData[0].simulations.length;
     const tableBody = document.getElementsByTagName('table')[0].getElementsByTagName('tbody')[0];
 
@@ -93,7 +93,7 @@ function handleDuplicate(toDup){
     increaseSimCardHeight(node); 
 }
 async function handleSimViewButton(index){
-    const tableData = await fetch('../data/Users.json').then((response) => response.json()).then((obj)=> obj.users_data);
+    const tableData = await fetch('./data/Users.json').then((response) => response.json()).then((obj)=> obj.users_data);
     const model = tableData[0].simulations[index];
     const imgID = model.ImgID;
     sessionStorage.setItem('model-image-id',imgID.toString());

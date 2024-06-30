@@ -2,7 +2,7 @@ import { updateHeader } from "./js_header.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     let catalogData = [];
-    fetch('../data/catalog.json')
+    fetch('./data/catalog.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
