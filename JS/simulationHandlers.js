@@ -96,10 +96,10 @@ async function handleSimViewButton(index){
     const tableData = await fetch('../data/Users.json').then((response) => response.json()).then((obj)=> obj.users_data);
     const model = tableData[0].simulations[index];
     const imgID = model.ImgID;
-    const imgURL = `http://127.0.0.1:5500/simulation.html?img=http://127.0.0.1:5500/images/Img_${imgID}.svg`;
-    sessionStorage.setItem('model-date',model.date);
-    sessionStorage.setItem('model-name',model.name);
-    window.location.href = imgURL;
+    sessionStorage.setItem('model-image-id',imgID.toString());
+    sessionStorage.setItem('model-img-id',imgID.toString());
+    sessionStorage.setItem('model-available-from-view','true');
+    window.location.href = 'catalog.html'; 
 
 }
 

@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             catalogData = data.catalog_data;
             displayCards(catalogData);
+            loadToSimulationFromView();
         })
         .catch(error => console.error('Error fetching catalog data:', error));
 
@@ -62,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cardContainer.appendChild(card);
         });
     }
+
     const searchInput = document.getElementById('search_input');
 
     searchInput.addEventListener('input', () => {
@@ -74,14 +76,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const imageContainer = document.getElementById('card-container');
     updateHeader();
     
     imageContainer.addEventListener('click', function(event) {
-        if (event.target.tagName === 'IMG') {
-            const imageUrl = event.target.src;
-            const titleSpan = event.target.parentNode;
+        
+        if (event.target.tagName === 'IMG' || event.target.tagName === 'DIV') {
+            
+            let imageUrl = event.target.src;
+            let titleSpan = event.target.parentNode;
+
+            for(let i = 0;i<document.getElementsByTagName('img').length;i++){
+                if(event.target.tagName === 'DIV'){
+                    const cardBody = event.target.getElementsByClassName('card-body')[i];
+                    const img = cardBody.getElementsByTagName('img')[0];
+                    if(img.alt.slice(4) == sessionStorage.getItem('model-img-id')){
+                        imageUrl = img.src;
+                        titleSpan = cardBody.getElementsByTagName('span')[0];
+                        break;
+                    }
+                    continue;
+                }
+                break;
+            }
             const title = titleSpan.getElementsByTagName('h3')[0];
             const cardBody = titleSpan.parentNode;
 
@@ -93,8 +113,25 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+function loadToSimulationFromView(){
+    if(sessionStorage.getItem('model-available-from-view') !== 'true'){
+        return;
+    }
+    const imgID = sessionStorage.getItem('model-image-id');
+    for(let i = 0;i < document.getElementsByClassName('card-body').length;i++){
+        const cardBody = document.getElementsByClassName('card-body')[i];
+        const cardContainer = cardBody.parentNode.parentNode;
+        const titleSpan = cardBody.getElementsByTagName('span')[0];
+        const image = titleSpan.getElementsByTagName('img')[0];
+        const imageAlt = image.alt;
+        const currentImageID = imageAlt.slice(4);
+        if(currentImageID == imgID){
+            const event = new Event('click');
+            cardContainer.dispatchEvent(event);
+            sessionStorage.removeItem('model-available-from-view');
+            sessionStorage.setItem('model-img-id',imgID.toString());
+            return;
+        }
+    }
+}
 
-// step 1: merge 2 branches v
-// step 2: add onclick for each view button
-// step 3: inside onclick, redirect to location href
-// step 4: convert to ori's format.
