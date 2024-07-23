@@ -13,10 +13,16 @@ body{
     height: 20px;
     margin-right: 10px;
 }
+#left-sidebar{
+    width: 300px;
+    background-color: rgb(15, 74, 159) !important;
+}
+
 #logo{
     width: 150px;
     height: 150px;
     background-image: url('../images/logo.svg');
+    margin-left: 50px;
 }
 
 .nav-icons-span{
@@ -165,3 +171,8 @@ body{
     margin-left: 60px;
 }
 
+#profile-image{
+    display:block;
+    width: 50px;
+    height: 50px;
+}

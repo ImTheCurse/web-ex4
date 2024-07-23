@@ -16,7 +16,7 @@
 <body>
     <section class="left-section">
       <nav>
-        <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-primary" style="width: 300px; background-color: rgb(15, 74, 159) !important; ">
+        <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-primary" id="left-sidebar">
           <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
             <div alt="logo" id="logo" class="icons"></div>
             <span class="fs-4"></span>
@@ -101,7 +101,7 @@
                 <div class="dropdown">
                     <a href="#" class="d-flex align-items-center text-black text-decoration-none dropdown-toggle"
                         id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="images/Img_Daniel.png" alt="" width="50" height="50" class="rounded-circle me-2">
+                        <img src="images/Img_Daniel.png" alt="profile-image" id="profile-image" class="rounded-circle me-2">
                         <strong id="user_full_name"></strong>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
@@ -120,7 +120,7 @@
                 <div class="card" id="simulations-card">
                     <div class="card-body">
                         <span class="card-title-span">
-                            <img src="images/library-blue.svg" alt="libarary Icon">
+                            <div id="library-card-icon" class="icons"></div>
                             <h3 class="card-title">My Simulations</h3>
                         </span>
                         <table>

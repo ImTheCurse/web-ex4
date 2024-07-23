@@ -6,6 +6,8 @@ body{
     display: flex;
     height: 100%;
 }
+
+
 .icons{
     display: block;
     background-size: contain;
@@ -18,6 +20,12 @@ body{
     width: 150px;
     height: 150px;
     background-image: url('../images/logo.svg');
+    margin-left:50px;
+}
+
+#left-sidebar{
+    width: 300px;
+    background-color: rgb(15, 74, 159) !important;
 }
 
 .nav-icons-span{
@@ -73,6 +81,7 @@ body{
     width: 60px;
     height: 60px;
 }
+
 
 .left-section{
     width: 300px;
