@@ -12,6 +12,7 @@ body{
     width: 20px;
     height: 20px;
     margin-right: 10px;
+    background-repeat: no-repeat;
 }
 #logo{
     width: 150px;
@@ -36,6 +37,41 @@ body{
 }
 #progress-icon{
     background-image: url('../images/AeroSim_Progress_Check_Icon.svg');
+}
+#study-progress-icon{
+    background-image: url('../images/Progress_blue.png');
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+}
+
+#catalog-card-icon{
+    background-image: url('../images/basket_blue.png');
+    width: 50px;
+    height: auto;
+    margin-right: 20px;
+    background-repeat: no-repeat;
+}
+#explore-card-icon{
+    background-image: url('../images/explore_icon.png');
+    width: 50px;
+    height: 50px;
+    margin-left: 40px;
+}
+
+#search-card-icon{
+    background-image: url('../images/Search.png');
+    width: 70px;
+    height: 70px;
+    margin-left: 30px;
+}
+#search-btn-icon{
+    margin-left: 50px;
+}
+#library-card-icon{
+    background-image: url('../images/library-blue.svg');
+    width: 60px;
+    height: 60px;
 }
 
 .left-section{
@@ -108,10 +144,16 @@ body{
     margin-top: 10px;
 }
 
-#progress-img{
-    width: 40px;
-    height: 40px;
-    margin-top: 10px;
+#profile-image{
+    display:block;
+    width: 50px;
+    height: 50px;
+}
+
+
+
+#catalog-span-card{
+    display: flex;
 }
 
 
@@ -144,12 +186,8 @@ body{
     margin-left: 30px;
 }
 
-#explore-icon{
-    margin-left: 60px;
-    margin-bottom: 10px;
-}
-#search-icon{
-    margin-left: 60px;
+#explore-btn{
+    margin-top: 20px;
 }
 
 #progression-card{

@@ -12,6 +12,7 @@
   <script type="module" src="JS/handleSearch.js"></script>
   <script src="JS/simulationHandlers.js" type="module"></script>
   <script src="JS/js_header.js" type="module"></script>
+  <script src="JS/HomePageHandler.js" type="module"></script>
   <title>AeroSim</title>
 </head>
 <body>
@@ -103,7 +104,7 @@
           <div class="dropdown">
             <a href="#" class="d-flex align-items-center text-black text-decoration-none dropdown-toggle"
               id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="images/Img_Daniel.png" alt="" width="50" height="50" class="rounded-circle me-2">
+              <img src="images/Img_Daniel.png" alt="profile-image" id="profile-image" class="rounded-circle me-2">
               <strong id="user_full_name"></strong>
             </a>
             <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
@@ -140,7 +141,7 @@
         <div class="card" id="progression-card">
           <div class="card-body">
             <span class="card-title-span">
-              <img id="progress-img" src="images/Progress_blue.png" alt="Progress Icon">
+              <div class="icons" id="study-progress-icon"></div>
               <h3 class="card-title">Study progression</h3>
             </span>
             <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="65" aria-valuemin="0"
@@ -154,23 +155,26 @@
         <div class="card" id="catalog-card">
           <div class="card-body">
             <span class="card-title-span">
-              <img src="images/basket_blue.png" alt="Progress Icon">
+              <div id="catalog-card-icon" class="icons"></div>
               <h3 class="card-title">Community Catalog</h3>
             </span>
-            <img id="explore-icon" src="images/explore_icon.png" alt="Explore Icon">
-            <img id="search-icon" src="images/Search.png" alt="Search Icon">
-            <span id="span-btn">
-              <a href="catalog.html">
-                <button id="btn-span-1" type="button" class="btn btn-primary">Explore</button>
-              </a>
-              <button id="btn-span-2" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#SearchModal">Search</button>
-            </span>
+            <span id="catalog-span-card">
+              <div id="explore-btn-icon">
+              <div id="explore-card-icon" class="icons" ></div>
+                  <button id="explore-btn" type="button" class="btn btn-primary">Explore</button>
+              </div>
+              <div id="search-btn-icon">
+                <div id="search-card-icon" class="icons"></div>
+                <button id="btn-span-2" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#SearchModal">Search</button>
+              </div>
+              </span>
+                
           </div>
         </div>
         <div class="card" id="simulations-card">
           <div class="card-body">
             <span class="card-title-span">
-              <img src="images/library-blue.svg" alt="libarary Icon">
+              <div id="library-card-icon" class="icons"></div>
               <h3 class="card-title">My Simulations</h3>
             </span>
             <table>
