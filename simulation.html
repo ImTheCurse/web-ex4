@@ -16,95 +16,76 @@
 </head>
 <body>
   <section class="left-section">
-    <nav>
-      <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-primary"
-        style="width: 300px; background-color: rgb(15, 74, 159) !important; ">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-          <svg class="bi me-2" width="40" height="32">
-            <use xlink:href="#bootstrap"></use>
-          </svg>
-          <img src="images/logo.svg" alt="logo" id="logo">
-          <span class="fs-4"></span>
-        </a>
-        <hr>
-        <ul class="nav nav-pills flex-column mb-auto">
-          <li class="nav-item">
-            <a href="index.html" class="nav-link text-white" aria-current="page">
-              <svg class="bi me-2" width="16" height="16">
-                <use xlink:href="#home"></use>
-              </svg>
-              <img src="images/AeroSim_Dashboard_Icon.svg" alt="Dashboard Icon">
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="catalog.html" class="nav-link text-white">
-              <svg class="bi me-2" width="16" height="16">
-                <use xlink:href="#speedometer2"></use>
-              </svg>
-              <img src="images/AeroSim_Shopping_Basket_Icon.svg" alt="basket Icon">
-              Community catalog
-            </a>
-          </li>
-          <li>
-            <a href="simulations.html" class="nav-link text-white">
-              <svg class="bi me-2" width="16" height="16">
-                <use xlink:href="#table"></use>
-              </svg>
-              <img src="images/AeroSim_Library_Books_Icon.svg" alt="Library Icon">
-              Simulations
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link text-white">
-              <svg class="bi me-2" width="16" height="16">
-                <use xlink:href="#grid"></use>
-              </svg>
-              <img src="images/AeroSim_Progress_Check_Icon.svg" alt="Progress Icon">
-              Progression
-            </a>
-          </li>
-        </ul>
-        <hr>
-        <ul id="nav-util">
-          <li>
-            <a href="#" class="nav-link text-white" id="settings">
-              <svg class="bi me-2" width="16" height="16">
-                <use xlink:href="#people-circle"></use>
-              </svg>
-              Settings
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link text-white" id="contact_us">
-              <svg class="bi me-2" width="16" height="16">
-                <use xlink:href="#people-circle"></use>
-              </svg>
-              Contact us
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link text-white" id="help">
-              <svg class="bi me-2" width="16" height="16">
-                <use xlink:href="#people-circle"></use>
-              </svg>
-              Help
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link text-white" id="logout">
-              <svg class="bi me-2" width="16" height="16">
-                <use xlink:href="#people-circle"></use>
-              </svg>
-              Logout
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+      <nav>
+        <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-primary" style="width: 300px; background-color: rgb(15, 74, 159) !important; ">
+          <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            <div alt="logo" id="logo" class="icons"></div>
+            <span class="fs-4"></span>
+          </a>
+          <hr>
+          <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link text-white" aria-current="page">
+                <span class="nav-icons-span">
+                  <div id="dashboard-icon" class="icons"></div>
+                  <h6>Home</h6>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="catalog.html" class="nav-link text-white">
+                <span class="nav-icons-span">
+                    <div class="icons" id="basket-icon"></div>
+                    <h6>Community catalog</h6>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="simulations.html" class="nav-link active">
+                <span class="nav-icons-span">
+                  <div class="icons" id="library-icon"></div>
+                  <h6>Simulations</h6>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link text-white">
+                <span class="nav-icons-span">
+                    <div class="icons" id="progress-icon"></div>
+                    <h6>Progression</h6>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <hr>
+          <ul id="nav-util">
+            <li>
+              <a href="#" class="nav-link text-white">
+                <h6>Settings</h6>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link text-white">
+                <h6>Contact us</h6>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link text-white">
+                <h6>Help</h6>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link text-white">
+                <h6>Logout</h6>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
   </section>
   <section class="right-section">
-    <nav class="navbar_bg-body-tertiary">
+    <header>
+      <nav class="navbar_bg-body-tertiary">
       <div class="container-fluid">
         <div id="header_title">
           <h3>Simulate an existing project</h3>
@@ -136,8 +117,10 @@
           </ul>
         </div>
       </div>
-    </nav>
-    <div class="content-area">
+      </nav>
+    </header>
+    <main>
+      <div class="content-area">
       <div id="simulation-area">
         <div id="simulation-img"></div>
         <div id="hoverController" draggable="true">
@@ -174,7 +157,8 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> 
+    </main>
   </section>
 </body>
 </html>

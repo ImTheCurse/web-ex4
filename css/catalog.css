@@ -1,16 +1,42 @@
-
+html{
+    overflow-x: hidden;
+}
 body{
     display: flex;
     height: 100%;
 }
 
+.icons{
+    display: block;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
 #logo{
     width: 150px;
     height: 150px;
-    margin-bottom: -40px;
-
+    background-image: url('../images/logo.svg');
 }
 
+.nav-icons-span{
+    display: flex;
+    margin-top: 10px;
+}
+
+#dashboard-icon{
+    background-image: url('../images/AeroSim_Dashboard_Icon.svg');
+}
+
+#basket-icon{
+    background-image: url('../images/AeroSim_Shopping_Basket_Icon.svg');
+}
+#library-icon{
+    background-image: url('../images/AeroSim_Library_Books_Icon.svg');
+}
+#progress-icon{
+    background-image: url('../images/AeroSim_Progress_Check_Icon.svg');
+}
 .left-section{
     width: 300px;
     min-height: 100vh;

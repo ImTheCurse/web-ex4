@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const descSpan = document.createElement('span');
             descSpan.className = 'span-desc';
 
-            descSpan.innerHTML = `<img src="images/clock.svg" alt="clock"> ${item.date} | <img src="images/views.svg" alt="Views"> ${item.views} | <img src="images/heart.svg" alt="Likes"> ${item.likes}`;
+            descSpan.innerHTML = `<img src="images/clock.svg" alt="clock"> ${item.date}  <img src="images/views.svg" alt="Views"> ${item.views}  <img src="images/heart.svg" alt="Likes"> ${item.likes}`;
 
             cardBody.appendChild(titleSpan);
             cardBody.appendChild(descSpan);
