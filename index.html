@@ -9,9 +9,9 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/style.css">
-  <script type="module" src="js/handleSearch.js"></script>
+  <script type="module" src="js/handleCatalogSearch.js"></script>
   <script src="js/simulationsList/simulationHandlers.js" type="module"></script>
-  <script src="js/js_header.js" type="module"></script>
+  <script src="js/header.js" type="module"></script>
   <script src="js/home/HomePageHandler.js" type="module"></script>
   <title>AeroSim</title>
 </head>
@@ -25,7 +25,7 @@
           </a>
           <hr>
           <ul class="nav nav-pills flex-column mb-auto">
-            <li class="nav-item">
+            <li>
               <a href="index.html" class="nav-link active" aria-current="page">
                 <span class="nav-icons-span">
                   <div id="dashboard-icon" class="icons"></div>
@@ -178,7 +178,7 @@
               <h3 class="card-title">My Simulations</h3>
             </span>
             <table>
-              <thead class="table-row">
+              <thead id="table-row">
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
                 <th scope="col">Date</th>

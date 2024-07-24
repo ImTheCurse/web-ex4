@@ -1,4 +1,4 @@
-import * as header from "../js_header.js";
+import * as header from "../header.js";
 window.onload = () => {
     console.log('GET {domain}/model_name');
     console.log('GET {domain}/model_date');

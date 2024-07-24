@@ -229,18 +229,18 @@ table{
     margin-left: 20px;
 }
 
-.table-row th,td{
+#table-row th,td{
     border-bottom: 1px solid rgba(212, 206, 206, 0.603);
     padding-right: 5vw;
     padding-top: 15px;
     padding-bottom: 15px;
 }
-.table-row th{
+#table-row th{
     padding-bottom: 0;
     padding-top: 0;
 }
 
-.table-row .btn{
+#table-row .btn{
     margin-top: 10px !important;
 }
 

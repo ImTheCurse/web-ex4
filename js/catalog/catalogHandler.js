@@ -1,4 +1,4 @@
-import { updateHeader } from "../js_header.js";
+import { updateHeader } from "../header.js";
 import { displayCards } from "./cardHandler.js";
 import { loadToSimulationFromView } from "./catalogInfo.js";
 

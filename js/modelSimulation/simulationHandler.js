@@ -1,4 +1,4 @@
-import { updateHeader } from '../js_header.js';
+import { updateHeader } from '../header.js';
 import { ZoomIn, ZoomOut, handleDropdownInputs } from './toolbarActions.js';
 import { loadSimName } from './simulationInfo.js';
 
