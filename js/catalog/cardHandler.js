@@ -21,7 +21,7 @@ export function displayCards(data) {
         titleSpan.id = 'card-title-span';
 
         const img = document.createElement('img');
-        img.src = `images/Img_${item.ImgID}.svg`;
+        img.src = `images/Img_${item.ImgID}.png`;
         img.alt = `Img_${item.ImgID}`;
         titleSpan.appendChild(img);
 
