@@ -3,9 +3,9 @@ import { checkSessionID } from "../handleCatalogSearch.js";
 window.onload = () => {
     console.log('GET {domain}/model_name');
     console.log('GET {domain}/model_date');
+    checkSessionID();
     populateSimulationHome(5);
     header.updateHeader();
-    checkSessionID();
 }
 
 

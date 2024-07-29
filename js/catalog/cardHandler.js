@@ -1,9 +1,17 @@
 
-export function displayCards(data) {
+export async function displayCards() {
 
     const cardContainer = document.getElementById('card-container');
     cardContainer.innerHTML = '';
-    data.forEach(item => {
+    const response = await fetch("https://final-web-cloud-proj-server.onrender.com/api/catalog", {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(res => res.json());
+
+
+    response.forEach(item => {
         console.log('GET {domain}/model_name');
         console.log('GET {domain}/model_image');
         console.log('GET {domain}/model_date');
@@ -21,16 +29,16 @@ export function displayCards(data) {
         titleSpan.id = 'card-title-span';
 
         const img = document.createElement('img');
-        img.src = `images/Img_${item.ImgID}.png`;
+        img.src = item.model_image_url;
         img.alt = `Img_${item.ImgID}`;
         titleSpan.appendChild(img);
 
         const title = document.createElement('h3');
         title.className = 'card-title';
-        title.textContent = item.name;
+        title.textContent = item.model_name;
 
         const creator = document.createElement('h6');
-        creator.textContent = `By ${item.creator_name}`;
+        creator.textContent = `By ${item.model_created_by}`;
 
         titleSpan.appendChild(title);
         titleSpan.appendChild(creator);
@@ -38,7 +46,7 @@ export function displayCards(data) {
         const descSpan = document.createElement('span');
         descSpan.className = 'span-desc';
 
-        descSpan.innerHTML = `<img src="images/clock.svg" alt="clock"> ${item.date}  <img src="images/views.svg" alt="Views"> ${item.views}  <img src="images/heart.svg" alt="Likes"> ${item.likes}`;
+        descSpan.innerHTML = `<img src="images/clock.svg" alt="clock"> ${item.created_at.slice(0, 10)}  <img src="images/views.svg" alt="Views"> ${item.views}  <img src="images/heart.svg" alt="Likes"> ${item.likes}`;
 
         cardBody.appendChild(titleSpan);
         cardBody.appendChild(descSpan);
