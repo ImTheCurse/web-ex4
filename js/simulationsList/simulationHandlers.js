@@ -10,13 +10,25 @@ window.onload = () => {
 
 
 export async function populateSimulationHome(maxLength) {
-    const tableData = await fetch('./data/Users.json').then((response) => response.json()).then((obj) => obj.users_data);
-    let tableLength = await tableData[0].simulations.length;
+    const sessionID = sessionStorage.getItem('AeroSim-session-key');
+
+    const tableData = await fetch("https://final-web-cloud-proj-server.onrender.com/api/simulations", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ sessionID: sessionID })
+    }).then(resp => resp.json());
+
+
+
+    let tableLength = await tableData.length;
     const tableBody = document.getElementsByTagName('table')[0].getElementsByTagName('tbody')[0];
 
     if (tableLength > maxLength) {
         tableLength = maxLength;
     }
+    const userID = await checkSessionID();
     for (let i = 0; i < tableLength; i++) {
         const tableID = document.createElement('td');
         const name = document.createElement('td');
@@ -24,12 +36,12 @@ export async function populateSimulationHome(maxLength) {
         const difficulty = document.createElement('td');
         const button = document.createElement('button');
 
-        //at the 0th position since we aren't using a database but a json file to load the users.
-        const sim = tableData[0].simulations[i];
-        tableID.innerHTML = i + 1;
-        name.innerHTML = sim.name;
-        date.innerHTML = sim.date;
+        const sim = tableData[i];
+        tableID.innerHTML = sim.model_id;
+        name.innerHTML = sim.model_name;
+        date.innerHTML = sim.created_at;
         difficulty.innerHTML = sim.difficulty;
+
 
 
         let duplicate = document.createElement('td');
@@ -56,10 +68,10 @@ export async function populateSimulationHome(maxLength) {
         tableRow.appendChild(date);
         tableRow.appendChild(difficulty);
 
-        dupImg.onclick = (() => handleDuplicate(tableRow));
+        dupImg.onclick = (() => handleDuplicate(tableRow, sim.model_id, userID));
         tableRow.appendChild(duplicate);
 
-        trashImg.onclick = (() => handleTrash(tableRow));
+        trashImg.onclick = (() => handleTrash(tableRow, sim.model_id, userID));
         trash.appendChild(trashImg);
 
         tableRow.appendChild(trash);
@@ -72,22 +84,43 @@ export async function populateSimulationHome(maxLength) {
 
 }
 
-function handleTrash(toDel) {
+async function handleTrash(toDel, modelID, userID) {
+    const response = await fetch("https://final-web-cloud-proj-server.onrender.com/api/simulations/delete", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ modelID: modelID, userID: userID })
+    });
+    if (response.status !== 200) {
+        alert("Couldn't delete model from database.");
+        return;
+    }
     toDel.remove();
     decreaseSimCardHeight(toDel);
-    console.log('DELETE {domain}/model');
-
 }
-function handleDuplicate(toDup) {
-    console.log('POST {domain}/model');
+async function handleDuplicate(toDup, modelID, userID) {
+    const response = await fetch("https://final-web-cloud-proj-server.onrender.com/api/simulations/duplicate", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ modelID: modelID, userID: userID })
+    });
+    if (response.status !== 200) {
+        alert("Couldn't duplicate model from database.");
+        return;
+    }
+
+
     const parent = toDup.parentNode;
     const node = toDup.cloneNode(toDup);
     const button = toDup.getElementsByTagName('button')[0];
 
     const dupButton = node.querySelector('img');
-    dupButton.onclick = (() => handleDuplicate(node));
+    dupButton.onclick = (() => handleDuplicate(node, modelID, userID));
     const trashButton = node.getElementsByTagName('img')[1];
-    trashButton.onclick = (() => handleTrash(node));
+    trashButton.onclick = (() => handleTrash(node, modelID, userID));
     node.getElementsByTagName('button')[0].onclick = button.onclick;
 
 

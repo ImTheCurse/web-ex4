@@ -40,7 +40,8 @@ export async function checkSessionID() {
     });
 
     if (response.status === 200) {
-        return;
+        const res = await response.json()
+        return await res.id;
     } else {
         window.location.href = 'login.html';
     }
