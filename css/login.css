@@ -59,7 +59,7 @@ main .input-field{
     width: 105%;
 }
 
-.forgot{
+#forgot{
     display: flex;
     justify-content: space-between;
     margin-bottom: 40px;
@@ -88,11 +88,11 @@ section a{
     color: #fff;
 }
 
-.input-submit{
+#input-submit{
     position: relative;
 }
 
-.submit-btn{
+#submit-btn{
     width: 100%;
     height: 60px;
     background: #222;
@@ -100,9 +100,11 @@ section a{
     border-radius: 30px;
     cursor: pointer;
     transition: .3s;
+    color: #ffffff;
+    
 }
 
-.input-submit label{
+#input-submit label{
     position: absolute;
     top: 45%;
     left: 50%;
@@ -113,19 +115,19 @@ section a{
     cursor: pointer;
 }
 
-.submit-btn:hover{
+#submit-btn:hover{
     background: #000;
     transform: scale(1.05,1);
 }
 
-.sign-up-link{
+#sign-up-link{
     text-align: center;
     font-size: 15px;
     margin-top: 20px;
     color: #fff;
 }
 
-.sign-up-link a{
+#sign-up-link a{
     color: #fff;
     font-weight: 600;
 }

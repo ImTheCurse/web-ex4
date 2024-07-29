@@ -1,11 +1,13 @@
 import * as header from "../header.js";
+import { checkSessionID } from "../handleCatalogSearch.js";
 window.onload = () => {
     console.log('GET {domain}/model_name');
     console.log('GET {domain}/model_date');
     populateSimulationHome(5);
     header.updateHeader();
-
+    checkSessionID();
 }
+
 
 export async function populateSimulationHome(maxLength) {
     const tableData = await fetch('./data/Users.json').then((response) => response.json()).then((obj) => obj.users_data);

@@ -1,10 +1,12 @@
 import { updateHeader } from '../header.js';
 import { ZoomIn, ZoomOut, handleDropdownInputs } from './toolbarActions.js';
 import { loadSimName } from './simulationInfo.js';
+import { checkSessionID } from '../handleCatalogSearch.js';
 
 document.addEventListener('DOMContentLoaded', function() {
     const simulationImg = document.getElementById('simulation-img');
     updateHeader();
+    checkSessionID();
     if (simulationImg) {
         function getQueryParameter(name) {
             const urlParams = new URLSearchParams(window.location.search);

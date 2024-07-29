@@ -1,8 +1,10 @@
 import { updateHeader } from "../header.js";
 import { displayCards } from "./cardHandler.js";
 import { loadToSimulationFromView } from "./catalogInfo.js";
+import { checkSessionID } from "../handleCatalogSearch.js";
 
 document.addEventListener('DOMContentLoaded', () => {
+    checkSessionID();
     let catalogData = [];
     fetch('./data/catalog.json')
         .then(response => {
