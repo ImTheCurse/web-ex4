@@ -34,9 +34,8 @@ body{
 
 #mobile-sidebar-content{
     background-color: rgb(15, 74, 159) !important;
+    width: 4.5rem;
 }
-
-
 
 .nav-icons-span{
     display: flex;
@@ -251,6 +250,18 @@ body{
         border-radius: 34px;
         border: 0px;
     }
+
+    #card-title-span img {
+        height: 150px;
+        width: 150px;
+        margin-left: 40px;
+    }
+
+    .card-body .span-desc {
+        margin-left: 10px;
+        font-size: smaller;
+    }
+
 }
 
 

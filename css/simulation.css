@@ -112,6 +112,10 @@
     cursor: pointer;
 }
 
+#mobile-sidebar #ZoomOut,#ZoomIn:hover{
+    cursor: pointer;
+}
+
 #hoverController #ZoomOut{
     margin-right: 0px;
     margin-left: 17px;
@@ -180,8 +184,8 @@
 
     #simulation-area > h2
     {
-        margin-top: 20px;
-        margin-left: 50px;
+        margin-top: 50px;
+        margin-left: 25px;
     }
 
     #simulation-area{
