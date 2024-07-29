@@ -3,32 +3,26 @@ import { displayCards } from "./cardHandler.js";
 import { loadToSimulationFromView } from "./catalogInfo.js";
 import { checkSessionID } from "../handleCatalogSearch.js";
 
-document.addEventListener('DOMContentLoaded', () => {
+
+document.addEventListener('DOMContentLoaded', async () => {
     checkSessionID();
-    let catalogData = [];
-    fetch('./data/catalog.json')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok ' + response.statusText);
-            }
-            return response.json();
-        })
-        .then(data => {
-            catalogData = data.catalog_data;
-            displayCards(catalogData);
-            loadToSimulationFromView();
-        })
-        .catch(error => console.error('Error fetching catalog data:', error));
+    const catalogData = await fetch("https://final-web-cloud-proj-server.onrender.com/api/catalog", {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(res => res.json());
 
-
+    displayCards();
+    loadToSimulationFromView();
 
     const searchInput = document.getElementById('search_input');
 
     searchInput.addEventListener('input', () => {
         const searchTerm = searchInput.value.toLowerCase();
         const filteredData = catalogData.filter(item =>
-            item.name.toLowerCase().includes(searchTerm) ||
-            item.creator_name.toLowerCase().includes(searchTerm)
+            item.model_name.toLowerCase().includes(searchTerm) ||
+            item.model_created_by.toLowerCase().includes(searchTerm)
         );
         displayCards(filteredData);
     });

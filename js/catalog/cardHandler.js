@@ -1,24 +1,19 @@
 
-export async function displayCards() {
+export async function displayCards(data) {
 
     const cardContainer = document.getElementById('card-container');
     cardContainer.innerHTML = '';
-    const response = await fetch("https://final-web-cloud-proj-server.onrender.com/api/catalog", {
+    let response = await fetch("https://final-web-cloud-proj-server.onrender.com/api/catalog", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
         }
     }).then(res => res.json());
 
+    if (data != null) { response = data; }
+
 
     response.forEach(item => {
-        console.log('GET {domain}/model_name');
-        console.log('GET {domain}/model_image');
-        console.log('GET {domain}/model_date');
-        console.log('GET {domain}/model_likes');
-        console.log('GET {domain}/model_views');
-        console.log('GET {domain}/model_creator_name');
-
         const card = document.createElement('div');
         card.className = 'card';
 
