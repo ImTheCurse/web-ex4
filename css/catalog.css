@@ -14,6 +14,7 @@ body{
     margin-right: 10px;
     background-repeat: no-repeat;
 }
+
 #left-sidebar{
     width: 300px;
     background-color: rgb(15, 74, 159) !important;
@@ -25,6 +26,17 @@ body{
     background-image: url('../images/logo.svg');
     margin-left: 50px;
 }
+
+#mobile-sidebar {
+    display: none;
+    
+}
+
+#mobile-sidebar-content{
+    background-color: rgb(15, 74, 159) !important;
+}
+
+
 
 .nav-icons-span{
     display: flex;
@@ -44,6 +56,7 @@ body{
 #progress-icon{
     background-image: url('../images/AeroSim_Progress_Check_Icon.svg');
 }
+
 .left-section{
     width: 300px;
     min-height: 100vh;
@@ -119,7 +132,8 @@ body{
 
 #card-title-span img{
     height: 150px;
-    width: 100%;
+    width: 150px;
+    margin-left: 80px;
 }
 #card-title-span img:hover{
     cursor:pointer;
@@ -157,7 +171,6 @@ body{
     margin-left: 20px;
 }
 
-
 #span-btn{
     display: block;
     margin-left: 30px;
@@ -177,3 +190,69 @@ body{
     width: 50px;
     height: 50px;
 }
+
+@media (max-width: 768px){
+    #mobile-sidebar{
+        display: block;
+        height: 100vh;
+        z-index: 1000;
+    }
+
+    #mobile-sidebar-content{
+        position: fixed ;
+        height: 100%;
+    }
+
+    .right-section{
+        width: calc(100vw - 70px);
+    }
+
+    header{
+        display: none;
+    }
+
+    #logo{
+        width: 70px;
+        height: 70px;
+        background-image: url('../images/logo.svg');
+        margin-left: -15px;
+    }
+
+    .content-area{
+        width: calc(100vw - 70px);
+    }
+    
+    #card-container {
+        padding-bottom: 20px;
+        margin-left: 10px;
+    }
+
+    .left-section{
+        width: 70px;
+        min-height: 100vh;
+    }
+
+    #left-sidebar{
+        display: none !important;
+    }
+
+    .container-fluid{
+        display: block;
+        align-items: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        justify-content: space-between;
+    }
+
+    .card{
+        margin-left: 20px;
+        margin-top: 30px;
+        width: 250px;
+        border-radius: 34px;
+        border: 0px;
+    }
+
+    
+}
+
+
