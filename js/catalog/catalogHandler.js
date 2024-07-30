@@ -5,6 +5,7 @@ import { checkSessionID } from "../handleCatalogSearch.js";
 
 
 document.addEventListener('DOMContentLoaded', async () => {
+    updateHeader();
     checkSessionID();
     let catalogData = [];
     try {

@@ -37,7 +37,7 @@ export async function populateSimulationHome(maxLength) {
             const sim = tableData[i];
             tableID.innerHTML = sim.model_id;
             name.innerHTML = sim.model_name;
-            date.innerHTML = sim.created_at;
+            date.innerHTML = sim.created_at.slice(0, 10);
             difficulty.innerHTML = sim.difficulty;
 
 
