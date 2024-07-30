@@ -210,11 +210,31 @@ body{
         display: none;
     }
 
-    #logo{
+    #mobile-logo{
         width: 70px;
         height: 70px;
         background-image: url('../images/logo.svg');
         margin-left: -15px;
+    }
+
+    #mobile-dashboard-icon{
+        background-image: url('../images/AeroSim_Dashboard_Icon.svg');
+    }
+
+    #mobile-basket-icon{
+        background-image: url('../images/AeroSim_Shopping_Basket_Icon.svg');
+    }
+    #mobile-library-icon{
+        background-image: url('../images/AeroSim_Library_Books_Icon.svg');
+    }
+    #mobile-progress-icon{
+        background-image: url('../images/AeroSim_Progress_Check_Icon.svg');
+    }
+
+    #mobile-profile-image{
+        display:block;
+        width: 50px;
+        height: 50px;
     }
 
     .content-area{

@@ -1,12 +1,4 @@
 
-.icons{
-    display: block;
-    background-size: contain;
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    background-repeat: no-repeat;
-}
 
 #lightning-icon{
     background-image: url('../images/AeroSim_Weather_Lightning_Rainy_Icon.svg');
@@ -185,7 +177,7 @@
     #simulation-area > h2
     {
         margin-top: 50px;
-        margin-left: 25px;
+        margin-left: 20px;
     }
 
     #simulation-area{
@@ -216,27 +208,50 @@
         display: none;
     }
 
-    #ZoomOut{
+    #mobile-ZoomOut{
+        background-image: url(../images/Img_ZoomOut.svg);
+        width: 50px;
+        height: 50px;
+        margin-top: 0px;
         margin-left: 5px;
+        cursor: pointer;
     }
 
-    #ZoomIn{
+    #mobile-ZoomIn{
         margin-left: 5px;
+        background-image: url(../images/Img_ZoomIn.svg);
+        width: 50px;
+        height: 50px;
+        margin-top: 10px;
+        cursor: pointer;
     }
 
-    #Backward{
+    #mobile-Backward{
+        background-image: url('../images/Img_Backward.svg');
+        width: 40px;
+        height: 40px;
+        margin-top: 25px;
         margin-left: 12px;
     }
-
-    #Forward{
+    #mobile-Forward{
+        background-image: url('../images/Img_Forward.svg');
+        width: 40px;
+        height: 40px;
+        margin-top: 25px;
         margin-left: 12px;
     }
-
-    #Expand{
+    #mobile-Expand{
+        background-image: url('../images/Img_Expand.svg');
+        width: 37px;
+        height: 37px;
+        margin-top: 24px;
         margin-left: 12px;
     }
-
-    #Curser{
+    #mobile-Curser{
+        background-image: url('../images/Img_Curser.svg');
+        width: 50px;
+        height: 50px;
+        margin-top: 18px;
         margin-left: 7px;
     }
 

@@ -26,7 +26,16 @@ document.addEventListener('DOMContentLoaded', function() {
 document.getElementById('ZoomOut').addEventListener('click', () => {
     ZoomOut();
 });
+
 document.getElementById('ZoomIn').addEventListener('click', () => {
+    ZoomIn();
+});
+
+document.getElementById('mobile-ZoomOut').addEventListener('click', () => {
+    ZoomOut();
+});
+
+document.getElementById('mobile-ZoomIn').addEventListener('click', () => {
     ZoomIn();
 });
 document.getElementById('arrow-inputs').addEventListener('click', () => {
