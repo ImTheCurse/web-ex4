@@ -7,24 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const simulationImg = document.getElementById('simulation-img');
     updateHeader();
     checkSessionID();
-    /*
-    if (simulationImg) {
-        function getQueryParameter(name) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(name);
-        }
-        const imageUrl = getQueryParameter('img');
-        loadSimName();
-        if (imageUrl) {
-            simulationImg.style.backgroundImage = `url(${imageUrl})`;
-        } else {
-            simulationImg.style.backgroundColor = 'gray';
-            console.error('Image URL not found in query parameters');
-        }
-    } else {
-        console.error('Element with ID "simulation-img" not found');
-    }
-    */
     loadSimName();
     if (simulationImg) {
         const imgURL = sessionStorage.getItem('model-url');
