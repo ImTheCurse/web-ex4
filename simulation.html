@@ -10,6 +10,7 @@
     crossorigin="anonymous"></script>
   <script src="js/modelSimulation/simulationHandler.js" type="module"></script>
   <script src="js/header.js" type="module"></script>
+  <script src="js/modelSimulation/envInputHandler.js" type="module"></script>
   <link rel="stylesheet" href="css/catalog.css">
   <link rel="stylesheet" href="css/simulation.css">
   <title>AeroSim</title>
@@ -145,12 +146,12 @@
               <div id="lightning-icon" class="icons"></div>
             </section>
             <div id="inputs_area">
-              <label for="customRange1" class="form-label">Air density</label>
-              <input type="range" class="form-range" id="customRange1">
-              <label for="customRange2" class="form-label">Humidity</label>
-              <input type="range" class="form-range" id="customRange2">
-              <label for="customRange3" class="form-label">Temperature</label>
-              <input type="range" class="form-range" id="customRange3">
+              <label for="air-density" class="form-label">Air density</label>
+              <input type="range" class="form-range" id="air-density" min="900" max="1100" value="1000">
+              <label for="humidity" class="form-label">Humidity</label>
+              <input type="range" class="form-range" id="humidity" min="0" max="100" value="50">
+              <label for="temperture" class="form-label">Temperature</label>
+              <input type="range" class="form-range" id="temperture" min="-100" max="100" value="30">
             </div>
             <button class="btn btn-primary" id="sim-btn">Simulate</button>
           </div>
