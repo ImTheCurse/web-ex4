@@ -1,12 +1,4 @@
 
-.icons{
-    display: block;
-    background-size: contain;
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    background-repeat: no-repeat;
-}
 
 #lightning-icon{
     background-image: url('../images/AeroSim_Weather_Lightning_Rainy_Icon.svg');
@@ -27,8 +19,6 @@
     height: 25px;
     margin-top: 5px;
 }
-
-
 
 #simulation-area{
     height: 100vh;
@@ -112,14 +102,13 @@
     cursor: pointer;
 }
 
+#mobile-sidebar #ZoomOut,#ZoomIn:hover{
+    cursor: pointer;
+}
+
 #hoverController #ZoomOut{
     margin-right: 0px;
     margin-left: 17px;
-}
-
-#inputs_area{
-    width: 20vw;
-
 }
 
 #sim-sidebar{ 
@@ -152,6 +141,7 @@
 #inputs_area{
     display: none;
     margin-top: 10px;
+    width: 20vw;
 }
 
 #sim-sidebar button{
@@ -180,4 +170,121 @@
     margin-left: 50vh;
 }
 
+@media (max-width: 1025px){
+
+    #simulation-area > h2
+    {
+        margin-top: 50px;
+        margin-left: 20px;
+    }
+
+    #simulation-area{
+        height: 100vh;
+        width: calc(100vw - 70px);
+        display: grid;
+        align-items: center;
+        position: relative;
+        align-content: space-between;
+    }
+
+    #simulation-img{
+        height: 25vh;
+        width: 50vw;
+        background-repeat: no-repeat;
+        background-size: contain;
+        justify-self: center;
+        position: absolute;
+
+    }
+
+    #simulation-area > h4
+    {
+        margin-left: 0vh;
+    }
+
+    #hoverController{   
+        display: none;
+    }
+
+    #mobile-ZoomOut{
+        background-image: url(../images/Img_ZoomOut.svg);
+        width: 50px;
+        height: 50px;
+        margin-top: 0px;
+        margin-left: 5px;
+        cursor: pointer;
+    }
+
+    #mobile-ZoomIn{
+        margin-left: 5px;
+        background-image: url(../images/Img_ZoomIn.svg);
+        width: 50px;
+        height: 50px;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    #mobile-Backward{
+        background-image: url('../images/Img_Backward.svg');
+        width: 40px;
+        height: 40px;
+        margin-top: 10px;
+        margin-left: 12px;
+    }
+    #mobile-Forward{
+        background-image: url('../images/Img_Forward.svg');
+        width: 40px;
+        height: 40px;
+        margin-top: 10px;
+        margin-left: 12px;
+    }
+    #mobile-Expand{
+        background-image: url('../images/Img_Expand.svg');
+        width: 37px;
+        height: 37px;
+        margin-top: 15px;
+        margin-left: 12px;
+    }
+    #mobile-Curser{
+        background-image: url('../images/Img_Curser.svg');
+        width: 50px;
+        height: 50px;
+        margin-top: 10px;
+        margin-left: 7px;
+    }
+
+    #inputs_area{
+        width: 50vw;
+    }
+
+    #analysis-section ,#input-section{
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 0px;
+        margin-top: 10px;
+    
+    }
+    #analysis-section h2, #input-section h2{
+        margin-left: 20px;
+        margin-right: 0px;
+    }
+
+    #sim-sidebar-inputs{
+        display: block;
+        height: 200px;
+        width:fit-content;
+        position: relative ;
+        background-color: rgb(255, 255, 255);
+        justify-self: end;
+        /* margin-top: 5px !important; */
+        z-index: 10;
+    }
+
+    #sim-sidebar button{
+        width: 150px;
+        height: 50px;
+        margin-left: 0px;
+        border-radius: 34px;
+    }
+}
 

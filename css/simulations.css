@@ -1,0 +1,85 @@
+
+
+#mobile-sidebar {
+    display: none;
+    
+}
+
+#mobile-sidebar-content{
+    background-color: rgb(15, 74, 159) !important;
+    width: 4.5rem;
+}
+
+@media (max-width: 1025px){
+    #mobile-sidebar{
+        display: block !important;
+        height: 100vh;
+        z-index: 1000;
+    }
+
+    #mobile-sidebar-content{
+        position: fixed ;
+        height: 100vh;
+    }
+
+    .right-section{
+        width: calc(100vw - 70px);
+    }
+
+    header{
+        display: none;
+    }
+
+    #mobile-logo{
+        width: 70px;
+        height: 70px;
+        background-image: url('../images/logo.svg');
+        margin-left: -15px;
+    }
+
+    #mobile-dashboard-icon{
+        background-image: url('../images/AeroSim_Dashboard_Icon.svg');
+    }
+
+    #mobile-basket-icon{
+        background-image: url('../images/AeroSim_Shopping_Basket_Icon.svg');
+    }
+    #mobile-library-icon{
+        background-image: url('../images/AeroSim_Library_Books_Icon.svg');
+    }
+    #mobile-progress-icon{
+        background-image: url('../images/AeroSim_Progress_Check_Icon.svg');
+    }
+
+    #mobile-profile-image{
+        display:block;
+        width: 50px;
+        height: 50px;
+    }
+
+    .content-area{
+        width: calc(100vw - 70px);
+    }
+    
+    #card-container {
+        padding-bottom: 20px;
+        margin-left: 10px;
+    }
+
+    .left-section{
+        width: 70px;
+        min-height: 100vh;
+    }
+
+    #left-sidebar{
+        display: none !important;
+    }
+
+    .card{
+        margin-left: 20px;
+        margin-top: 30px;
+        width: 250px;
+        border-radius: 34px;
+        border: 0px;
+    }
+}
