@@ -1,15 +1,16 @@
 
 export async function displayCards(data) {
-
+    let response;
     const cardContainer = document.getElementById('card-container');
     cardContainer.innerHTML = '';
-    let response = await fetch("https://final-web-cloud-proj-server.onrender.com/api/catalog", {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    }).then(res => res.json());
-
+    if (data == null) {
+        response = await fetch("https://final-web-cloud-proj-server.onrender.com/api/catalog", {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(res => res.json());
+    }
     if (data != null) { response = data; }
 
 
@@ -25,7 +26,7 @@ export async function displayCards(data) {
 
         const img = document.createElement('img');
         img.src = item.model_image_url;
-        img.alt = `Img_${item.ImgID}`;
+        img.alt = `IMG`;
         titleSpan.appendChild(img);
 
         const title = document.createElement('h3');
@@ -41,8 +42,14 @@ export async function displayCards(data) {
         const descSpan = document.createElement('span');
         descSpan.className = 'span-desc';
 
+        const id = document.createElement('h6');
+        id.id = 'card-model-id';
+        id.style.display = 'none';
+        id.textContent = item.model_id;
+
         descSpan.innerHTML = `<img src="images/clock.svg" alt="clock"> ${item.created_at.slice(0, 10)}  <img src="images/views.svg" alt="Views"> ${item.views}  <img src="images/heart.svg" alt="Likes"> ${item.likes}`;
 
+        cardBody.appendChild(id);
         cardBody.appendChild(titleSpan);
         cardBody.appendChild(descSpan);
         card.appendChild(cardBody);

@@ -6,61 +6,68 @@ import { checkSessionID } from "../handleCatalogSearch.js";
 
 document.addEventListener('DOMContentLoaded', async () => {
     checkSessionID();
-    const catalogData = await fetch("https://final-web-cloud-proj-server.onrender.com/api/catalog", {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    }).then(res => res.json());
-
-    displayCards();
+    let catalogData = [];
+    try {
+        catalogData = await fetch("https://final-web-cloud-proj-server.onrender.com/api/catalog", {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(res => res.json());
+    } catch (err) { }
+    await displayCards();
     loadToSimulationFromView();
-
+    initCardOnClick();
     const searchInput = document.getElementById('search_input');
 
-    searchInput.addEventListener('input', () => {
+    searchInput.addEventListener('input', async () => {
         const searchTerm = searchInput.value.toLowerCase();
         const filteredData = catalogData.filter(item =>
             item.model_name.toLowerCase().includes(searchTerm) ||
             item.model_created_by.toLowerCase().includes(searchTerm)
         );
-        displayCards(filteredData);
+
+        await displayCards(await filteredData);
+        initCardOnClick();
+        removeDuplicates();
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const imageContainer = document.getElementById('card-container');
-    updateHeader();
+function initCardOnClick() {
+    const elems = document.getElementsByClassName('card');
+    for (let i = 0; i < elems.length; i++) {
+        const modelName = elems[i].getElementsByTagName('h3')[0].textContent;
+        const modelID = elems[i].getElementsByTagName('h6')[0].textContent;
+        const modelDate = elems[i].getElementsByTagName('img')[1].nextSibling.data.trim();
+        const modelURL = elems[i].getElementsByTagName('img')[0].src;
 
-    imageContainer.addEventListener('click', function(event) {
+        elems[i].addEventListener('click', () => {
+            loadSessionVars(modelID, modelName, modelDate, modelURL);
+            window.location.href = 'simulation.html';
+        });
+    }
+}
 
-        if (event.target.tagName === 'IMG' || event.target.tagName === 'DIV') {
-
-            let imageUrl = event.target.src;
-            let titleSpan = event.target.parentNode;
-
-            for (let i = 0; i < document.getElementsByTagName('img').length; i++) {
-                if (event.target.tagName === 'DIV') {
-                    const cardBody = event.target.getElementsByClassName('card-body')[i];
-                    const img = cardBody.getElementsByTagName('img')[0];
-                    if (img.alt.slice(4) == sessionStorage.getItem('model-img-id')) {
-                        imageUrl = img.src;
-                        titleSpan = cardBody.getElementsByTagName('span')[0];
-                        break;
-                    }
-                    continue;
-                }
-                break;
-            }
-            const title = titleSpan.getElementsByTagName('h3')[0];
-            const cardBody = titleSpan.parentNode;
-
-            const date = cardBody.getElementsByClassName('span-desc')[0].outerHTML.split('|')[0].split('>')[2].trim();
-            sessionStorage.setItem('model-date', date);
-            sessionStorage.setItem('model-name', title.textContent);
-            window.location.href = `simulation.html?img=${imageUrl}`;
+function removeDuplicates() {
+    const cardBodies = document.getElementsByClassName('card-body');
+    let seenID = [];
+    for (let i = 0; i < cardBodies.length; i++) {
+        if (seenID.length === 0) {
+            seenID.push(cardBodies[i].getElementsByTagName('h6')[0].textContent);
+            continue;
         }
-    });
-});
+        if (seenID.includes(cardBodies[i].getElementsByTagName('h6')[0].textContent)) {
+            const card = cardBodies[i].parentNode;
+            card.remove();
+            continue;
+        }
+        seenID.push(cardBodies[i].getElementsByTagName('h6')[0].textContent);
+    }
+}
 
-
+function loadSessionVars(modelID, modelName, modelDate, modelURL) {
+    sessionStorage.setItem('model-date', modelDate);
+    sessionStorage.setItem('model-name', modelName);
+    sessionStorage.setItem('model-url', modelURL);
+    sessionStorage.setItem('model-id', modelID);
+}

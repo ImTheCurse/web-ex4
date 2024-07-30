@@ -30,22 +30,25 @@ if (document.getElementById('search-btn-modal') != null) {
 }
 
 export async function checkSessionID() {
-    const sessionID = sessionStorage.getItem('AeroSim-session-key');
-    const response = await fetch("https://final-web-cloud-proj-server.onrender.com/api/session/check", {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ sessionID: sessionID })
-    });
+    try {
+        const sessionID = sessionStorage.getItem('AeroSim-session-key');
+        const response = await fetch("https://final-web-cloud-proj-server.onrender.com/api/session/check", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ sessionID: sessionID })
+        });
 
-    if (response.status === 200) {
-        const res = await response.json()
-        return await res.id;
-    } else {
-        window.location.href = 'login.html';
-    }
+        if (response.status === 200) {
+            const res = await response.json()
+            return await res.id;
+        } else {
+            window.location.href = 'login.html';
+        }
 
+
+    } catch (err) { }
 }
 
 

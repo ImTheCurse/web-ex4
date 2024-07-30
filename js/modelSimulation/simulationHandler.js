@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const simulationImg = document.getElementById('simulation-img');
     updateHeader();
     checkSessionID();
+    /*
     if (simulationImg) {
         function getQueryParameter(name) {
             const urlParams = new URLSearchParams(window.location.search);
@@ -23,6 +24,18 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         console.error('Element with ID "simulation-img" not found');
     }
+    */
+    loadSimName();
+    if (simulationImg) {
+        const imgURL = sessionStorage.getItem('model-url');
+        if (imgURL) {
+            simulationImg.style.backgroundImage = `url(${imgURL})`;
+        } else {
+            simulationImg.style.backgroundColor = 'gray';
+        }
+    }
+
+
 });
 
 document.getElementById('ZoomOut').addEventListener('click', () => {
