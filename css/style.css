@@ -352,17 +352,37 @@ td button{
     .card{
         margin-left: 20px;
         margin-top: 30px;
+        width: 80% !important;
         border-radius: 34px;
         border: 0px;
     }
 }
 
-@media (max-width: 350px){
+@media (max-width: 400px){
     .card{
         margin-left: 20px;
         margin-top: 30px;
-        /* width: 250px !important; */
+        width: 80% !important;
         border-radius: 34px;
         border: 0px;
+    }
+
+    #search-btn-icon {
+        margin-left: 0px;
+    }
+
+    #explore-card-icon {
+        background-image: url(../images/explore_icon.png);
+        width: 50px;
+        height: 50px;
+        margin-left: 10px;
+    }
+
+    #explore-btn{
+        margin-left: -12px;
+    }
+    
+    .card-title-span{
+        font-size:large;
     }
 }
