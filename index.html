@@ -13,11 +13,53 @@
   <script src="js/simulationsList/simulationHandlers.js" type="module"></script>
   <script src="js/header.js" type="module"></script>
   <script src="js/home/HomePageHandler.js" type="module"></script>
+  
   <title>AeroSim</title>
 </head>
 <body>
   <section class="left-section">
       <nav>
+        <div id="mobile-sidebar">
+          <div id="mobile-sidebar-content" class="d-flex flex-column flex-shrink-0 bg-light">
+            <a href="index.html" class="d-block p-3 link-dark text-decoration-none" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
+              <div alt="logo" id="mobile-logo" class="icons"></div>
+            </a>
+            <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+              <li>
+                <a href="index.html" class="nav-link active py-3 border-bottom" aria-current="page" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
+                  <div id="mobile-dashboard-icon" class="icons"></div>
+                </a>
+              </li>
+              <li>
+                <a href="catalog.html" class="nav-link py-3 border-bottom" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
+                  <div  id="mobile-basket-icon" class="icons"></div>
+                </a>
+              </li>
+              <li>
+                <a href="simulations.html" class="nav-link py-3 border-bottom" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Orders">
+                  <div id="mobile-library-icon" class="icons" ></div>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link py-3 border-bottom" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Products">
+                  <div id="mobile-progress-icon" class="icons" ></div>
+                </a>
+              </li>
+            </ul>
+            <div class="dropdown border-top">
+              <a href="#" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="images/Img_Daniel.png" alt="mobile-profile-image" id="mobile-profile-image" class="rounded-circle" width="24" height="24">
+              </a>
+              <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3">
+                <li><a class="dropdown-item" href="#">My profile</a></li>
+                <li><a class="dropdown-item" href="#">Projects</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Sign out</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
           <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-primary" id="left-sidebar">
             <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
               <div alt="logo" id="logo" class="icons"></div>
@@ -176,18 +218,20 @@
               <div id="library-card-icon" class="icons"></div>
               My Simulations
             </span>
-            <table>
-              <thead id="table-row">
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Date</th>
-                <th scope="col">Difficulty</th>
-                <th></th>
-                <th></th>
-                <th></th>
-              </thead>
-              <tbody></tbody>
-            </table>
+            <div id="div-table" >
+              <table>
+                <thead id="table-row">
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Difficulty</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
           </div>
           <button type="button" id="simulation-card-btn" class="btn btn-primary">View All</button>
         </div>          

@@ -190,7 +190,7 @@ body{
     height: 50px;
 }
 
-@media (max-width: 768px){
+@media (max-width: 1025px){
     #mobile-sidebar{
         display: block;
         height: 100vh;
@@ -199,7 +199,7 @@ body{
 
     #mobile-sidebar-content{
         position: fixed ;
-        height: 100%;
+        height: 100vh;
     }
 
     .right-section{
