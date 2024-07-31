@@ -12,6 +12,7 @@
     <script src="js/header.js" type="module"></script>
     <script src="js/catalog/catalogHandler.js" type="module"></script>
     <script src="js/handleCatalogSearch.js" type="module"></script>
+    <script src="js/admin/adminCatalog.js" type="module"></script>
     <title>AeroSim</title>
 </head>
 <body>
@@ -19,7 +20,7 @@
       <nav>
         <div id="mobile-sidebar">
           <div id="mobile-sidebar-content" class="d-flex flex-column flex-shrink-0 bg-light">
-            <a href="#" class="d-block p-3 link-dark text-decoration-none" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
+            <a href="catalogAdmin.html" class="d-block p-3 link-dark text-decoration-none" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
               <div alt="logo" id="mobile-logo" class="icons"></div>
             </a>
             <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
@@ -29,15 +30,15 @@
                 </a>
               </li>
               <li>
-                <a href="#" class="nav-link py-3 border-bottom" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Orders">
-                  <div id="mobile-library-icon" class="icons" ></div>
+                <a href="stats.html" class="nav-link py-3 border-bottom" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Orders">
+                  <div id="stats-icon" class="icons" ></div>
                 </a>
               </li>
             </ul>
             <div id="not">
-              <a href="#" id="mobile-notification">
+              <a href="messages.html" id="mobile-notification">
                 <span></span>
-                <span id="mobile-badge">3</span>
+                <span id="mobile-badge">_</span>
               </a>
             </div>
             <div class="dropdown border-top">
@@ -53,14 +54,14 @@
           </div>
         </div>
         <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-primary"  id="left-sidebar">
-          <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+          <a href="catalogAdmin.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
             <div alt="logo" id="logo" class="icons"></div>
             <span class="fs-4"></span>
           </a>
           <hr>
           <ul class="nav nav-pills flex-column mb-auto">
             <li>
-              <a href="catalog.html" class="nav-link active">
+              <a href="catalogAdmin.html" class="nav-link active">
                 <span class="nav-icons-span">
                     <div class="icons" id="basket-icon"></div>
                     <h6>Community catalog</h6>
@@ -68,9 +69,9 @@
               </a>
             </li>
             <li>
-              <a href="#" class="nav-link text-white">
+              <a href="stats.html" class="nav-link text-white">
                 <span class="nav-icons-span">
-                  <div class="icons" id="library-icon"></div>
+                  <div class="icons" id="stats-icon"></div>
                   <h6>Statistics</h6>
                 </span>
               </a>
@@ -97,7 +98,8 @@
             <nav class="navbar_bg-body-tertiary">
             <div class="container-fluid">
                 <div id="header_title">
-                    <h3>Admin view</h3>
+                    <h3>Moderate the community</h3>
+                    <h5>ex. Airplane, Train, Shoe ...</h5>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item active" aria-current="page">Community catalog</li>
@@ -109,9 +111,9 @@
                         aria-label="Search">
                 </div>
                 <div id="not">
-                  <a href="#" id="notification">
+                  <a href="messages.html" id="notification">
                     <span></span>
-                    <span id="badge">3</span>
+                    <span id="badge">_</span>
                   </a>
                 </div>
                 <div class="dropdown">
@@ -139,11 +141,11 @@
                 <div class="modal-body">
                   <div class="mb-3">
                     <h6 id="report-user-name"></h6>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea class="form-control" id="modal-text-input" rows="3"></textarea>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-primary">Send</button>
+                  <button id="modal-text-btn"type="button" class="btn btn-primary">Send</button>
                 </div>
               </div>
             </div>

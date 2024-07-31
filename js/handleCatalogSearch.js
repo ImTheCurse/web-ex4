@@ -28,6 +28,9 @@ if (document.getElementById('search-btn-modal') != null) {
 export async function checkSessionID() {
     try {
         const sessionID = sessionStorage.getItem('AeroSim-session-key');
+        if (sessionID == null) {
+            window.location.href = 'login.html';
+        }
         const response = await fetch("https://final-web-cloud-proj-server.onrender.com/api/session/check", {
             method: 'POST',
             headers: {
@@ -36,9 +39,28 @@ export async function checkSessionID() {
             body: JSON.stringify({ sessionID: sessionID })
         });
 
+        const id = await response.json();
+        const role = await fetch("https://final-web-cloud-proj-server.onrender.com/api/login/user", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ id: id.id })
+        }).then(res => res.json());
+
+
+
+        const fileName = location.href.split("/").slice(-1)[0];
+        console.log(role.role)
         if (response.status === 200) {
-            const res = await response.json()
-            return await res.id;
+            if (role.role != 'user' && (fileName == 'simulation.html' || fileName == 'index.html' || fileName == 'simulations.html' ||
+                fileName == 'catalog.html')) {
+                window.location.href = 'login.html';
+            }
+            if (role.role != 'admin' && (fileName == 'catalogAdmin.html' || fileName == 'stats.html')) {
+                window.location.href = 'login.html';
+            }
+            return await id.id;
         } else {
             window.location.href = 'login.html';
         }

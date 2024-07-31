@@ -56,6 +56,7 @@ async function displayMessages() {
     }
 
     const messageAmount = document.getElementById('badge').textContent = response.length;
+    const messageAmountMovile = document.getElementById('mobile-badge').textContent = response.length;
 }
 
 document.getElementById('modal-send-btn').addEventListener('click', async () => {

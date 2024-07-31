@@ -1,3 +1,4 @@
+
 export { updateHeader }
 
 function updateHeader() {
@@ -6,6 +7,7 @@ function updateHeader() {
 
 async function setUserInfo() {
     const profileImage = document.getElementById('profile-image');
+    const mobileProfileImage = document.getElementById('mobile-profile-image');
     const userName = document.getElementById('user_full_name');
     const id = await fetch('https://final-web-cloud-proj-server.onrender.com/api/session/check', {
         method: 'POST',
@@ -26,6 +28,7 @@ async function setUserInfo() {
     }).then(res => res.json());
 
     profileImage.setAttribute('src', userInfo.image_url);
+    mobileProfileImage.setAttribute('src', userInfo.image_url);
     userName.innerText = userInfo.name;
 
     const headerTitle = document.getElementById('Welcome-first_name');

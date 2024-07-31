@@ -1,3 +1,4 @@
+import { checkSessionID } from "../handleCatalogSearch.js";
 
 export async function displayCards(data) {
     let response;
@@ -20,24 +21,20 @@ export async function displayCards(data) {
         const cardBody = document.createElement('div');
         cardBody.className = 'card-body';
 
-        // const cardUserId = document.createElement('h6');
-        // cardUserId.id = 'card-user-id';
-        // cardUserId.style.display = 'none';
-        // cardUserId.textContent = item.user_id;
-        // cardBody.appendChild(cardUserId);
-
         const fileName = location.href.split("/").slice(-1)[0];
-        if (fileName == 'catalogAdmin.html') 
-        {
+        if (fileName == 'catalogAdmin.html') {
             const warningIcon = document.createElement('div');
             warningIcon.id = 'warning-icon';
             warningIcon.className = "btn btn-primary";
-            warningIcon.setAttribute('data-bs-toggle',"modal");
-            warningIcon.setAttribute('data-bs-target',"#staticBackdrop");
-            warningIcon.addEventListener('click', ()=> {
+            warningIcon.setAttribute('data-bs-toggle', "modal");
+            warningIcon.setAttribute('data-bs-target', "#staticBackdrop");
+            warningIcon.addEventListener('click', async () => {
                 document.getElementById('report-user-name').innerHTML = "Message to " + item.model_created_by;
+                sessionStorage.setItem('modal-senderID', item.user_id);
+                const recv_id = await checkSessionID();
+                sessionStorage.setItem('modal-recieverID', await recv_id);
             })
-            warningIcon.style.border = "white"; 
+            warningIcon.style.border = "white";
             warningIcon.style.backgroundColor = "white";
             warningIcon.style.position = "absolute";
             warningIcon.style.marginLeft = "0px";
@@ -79,3 +76,29 @@ export async function displayCards(data) {
         cardContainer.appendChild(card);
     });
 }
+if (document.getElementById('modal-text-btn')) {
+    document.getElementById('modal-text-btn').addEventListener('click', async () => {
+        const message = document.getElementById('modal-text-input').value;
+        const recv_id = sessionStorage.getItem('modal-recieverID');
+        const send_id = sessionStorage.getItem('modal-senderID');
+
+        const response = await fetch('https://final-web-cloud-proj-server.onrender.com/api/messages/send', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                reciever_id: send_id,
+                sender_id: recv_id,
+                message: message
+            })
+        });
+        if (response.status == 200) {
+            alert('Sent message.');
+        } else {
+            alert("error: could'nt send message.");
+        }
+    })
+
+}
+

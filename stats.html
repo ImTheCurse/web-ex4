@@ -9,10 +9,9 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script src="js/header.js" type="module"></script>
-    <script src="js/simulationsList/handleObjectList.js" type="module"></script>
+    <script src="js/admin/stats.js" type="module"></script>
     <script src="js/charts/chart.js" type="module"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/simulations.css">
     <title>AeroSim</title>
@@ -37,9 +36,16 @@
                 </a>
               </li>
             </ul>
+
+            <div id="not">
+              <a href="messages.html" id="mobile-notification">
+                <span></span>
+                <span id="mobile-badge">3</span>
+              </a>
+            </div>
             <div class="dropdown border-top">
               <a href="#" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="images/Img_Daniel.png" alt="mobile-profile-image" id="mobile-profile-image" class="rounded-circle" width="24" height="24">
+                <img src="" alt="mobile-profile-image" id="mobile-profile-image" class="rounded-circle" width="24" height="24">
               </a>
               <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3">
                 <li><a class="dropdown-item" href="#">My profile</a></li>
@@ -118,7 +124,7 @@
                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               </div>
               <div id="not">
-                  <a href="#" id="notification">
+                  <a href="messages.html" id="notification">
                     <span></span>
                     <span id="badge">3</span>
                   </a>

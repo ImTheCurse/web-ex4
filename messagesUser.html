@@ -10,6 +10,7 @@
         crossorigin="anonymous"></script>
     <script src="js/header.js" type="module"></script>
     <script src="js/simulationsList/handleObjectList.js" type="module"></script>
+    <script src="js/messages/messages.js" type="module"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/simulations.css">
     <title>AeroSim</title>
@@ -34,7 +35,7 @@
                 </a>
               </li>
               <li>
-                <a href="simulations.html" class="nav-link active py-3 border-bottom" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Orders">
+                <a href="simulations.html" class="nav-link py-3 border-bottom" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Orders">
                   <div id="mobile-library-icon" class="icons" ></div>
                 </a>
               </li>
@@ -44,6 +45,12 @@
                 </a>
               </li>
             </ul>
+            <div id="mobile-not">
+              <a href="messagesUser.html" id="mobile-notification">
+                <span></span>
+                <span id="mobile-badge">_</span>
+              </a>
+            </div>
             <div class="dropdown border-top">
               <a href="#" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="" alt="mobile-profile-image" id="mobile-profile-image" class="rounded-circle" width="24" height="24">
@@ -59,13 +66,13 @@
           </div>
         </div>
         <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-primary" id="left-sidebar">
-          <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+          <a href="index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
             <div alt="logo" id="logo" class="icons"></div>
             <span class="fs-4"></span>
           </a>
           <hr>
           <ul class="nav nav-pills flex-column mb-auto">
-            <li>
+           <li>
               <a href="index.html" class="nav-link text-white" aria-current="page">
                 <span class="nav-icons-span">
                   <div id="dashboard-icon" class="icons"></div>
@@ -82,7 +89,7 @@
               </a>
             </li>
             <li>
-              <a href="simulations.html" class="nav-link active">
+              <a href="simulations.html" class="nav-link text-white">
                 <span class="nav-icons-span">
                   <div class="icons" id="library-icon"></div>
                   <h6>Simulations</h6>
@@ -133,8 +140,7 @@
                   <h5>Continue your study path from where you left</h5>
                   <nav aria-label="breadcrumb">
                       <ol class="breadcrumb">
-                          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                          <li class="breadcrumb-item active" aria-current="page">Simulations</li>
+                          <li class="breadcrumb-item">Statistics</li>
                       </ol>
                   </nav>
               </div>
@@ -142,10 +148,12 @@
                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               </div>
               <div id="not">
-                <a href="messagesUser.html" id="notification">
-                  <span id="badge"></span>
-                </a>
-              </div>
+                  <a href="messagesUser.html" id="notification">
+                    <span></span>
+                    <span id="badge"> </span>
+                  </a>
+                </div>
+
               <div class="dropdown">
                   <a href="#" class="d-flex align-items-center text-black text-decoration-none dropdown-toggle"
                       id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -165,28 +173,36 @@
       </nav>
       </header>
       <main>
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="staticBackdropLabel">Report model</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="mb-3">
+                    <h6 id="report-user-name"></h6>
+                    <textarea class="form-control" id="modal-text-input" rows="3"></textarea>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button id="modal-send-btn" type="button" class="btn btn-primary">Send</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="content-area">
           <div id="card-container">
               <div class="card" id="simulations-card">
                   <div class="card-body">
                       <span class="card-title-span">
-                          <div id="library-card-icon" class="icons"></div>
-                          My Simulations
+                          <div id="stats-icon" class="icons"></div>
+                        My Messages
                       </span>
-                      <div id="div-table" >
-                        <table>
-                          <thead id="table-row">
-                              <th scope="col">#</th>
-                              <th scope="col">Name</th>
-                              <th scope="col">Date</th>
-                              <th scope="col">Difficulty</th>
-                              <th></th>
-                              <th></th>
-                              <th></th>
-                          </thead>
-                          <tbody></tbody>
-                        </table>
-                      </div>
                   </div>
               </div>
           </div>
