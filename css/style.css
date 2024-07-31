@@ -85,6 +85,9 @@ body{
     width: 20px;
     background-image: url('../images/stats-icon.svg');
 }
+#mobile-stats-icon{
+    background-image: url('../images/stats-icon.svg');
+}
 
 
 .left-section{
@@ -383,6 +386,28 @@ td button{
         border-radius: 34px;
         border: 0px;
     }
+    #mobile-notification {
+        margin-right: 20px;
+        text-decoration: none;
+        padding: 40px 26px;
+        margin-left: 10px;
+        position: relative;
+        background-image: url('../images/message_icon.svg');
+        background-repeat: no-repeat;
+      }
+      
+      #mobile-notification #mobile-badge {
+        position: absolute;
+        top: -2px;
+        right: -5px;
+        padding-left: 5px;
+        width: 20px;
+        border-radius: 50%;
+        background: red;
+        color: white;
+      }
+
+
 }
 
 @media (max-width: 400px){
@@ -412,4 +437,27 @@ td button{
     .card-title-span{
         font-size:large;
     }
+
+    #mobile-notification {
+            margin-right: 20px;
+            text-decoration: none;
+            padding: 40px 26px;
+            margin-left: 10px;
+            position: relative;
+            background-image: url('../images/message_icon.svg');
+            background-repeat: no-repeat;
+      }
+          
+      #mobile-notification #mobile-badge {
+        position: absolute;
+        top: -2px;
+        right: -5px;
+        padding-left: 5px;
+        width: 20px;
+        border-radius: 50%;
+        background: red;
+        color: white;
+      }
+
+
 }

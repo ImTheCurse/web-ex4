@@ -10,9 +10,7 @@
         crossorigin="anonymous"></script>
     <script src="js/header.js" type="module"></script>
     <script src="js/simulationsList/handleObjectList.js" type="module"></script>
-    <script src="js/charts/chart.js" type="module"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-
+    <script src="js/messages/messages.js" type="module"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/simulations.css">
     <title>AeroSim</title>
@@ -37,6 +35,13 @@
                 </a>
               </li>
             </ul>
+            <div id="mobile-not">
+                <a href="messages.html" id="mobile-notification">
+                  <span></span>
+                  <span id="mobile-badge">3</span>
+                </a>
+            </div>
+
             <div class="dropdown border-top">
               <a href="#" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="images/Img_Daniel.png" alt="mobile-profile-image" id="mobile-profile-image" class="rounded-circle" width="24" height="24">
@@ -67,7 +72,7 @@
               </a>
             </li>
             <li>
-              <a href="stats.html" class="nav-link active">
+              <a href="stats.html" class="nav-link text-white">
                 <span class="nav-icons-span">
                   <div class="icons" id="stats-icon"></div>
                   <h6>Statistics</h6>
@@ -118,7 +123,7 @@
                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               </div>
               <div id="not">
-                  <a href="#" id="notification">
+                  <a href="messages.html" id="notification">
                     <span></span>
                     <span id="badge">3</span>
                   </a>
@@ -143,17 +148,36 @@
       </nav>
       </header>
       <main>
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="staticBackdropLabel">Report model</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="mb-3">
+                    <h6 id="report-user-name"></h6>
+                    <textarea class="form-control" id="modal-text-input" rows="3"></textarea>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button id="modal-send-btn" type="button" class="btn btn-primary">Send</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="content-area">
           <div id="card-container">
               <div class="card" id="simulations-card">
                   <div class="card-body">
                       <span class="card-title-span">
                           <div id="stats-icon" class="icons"></div>
-                        My Statistics
+                        My Messages
                       </span>
-                      <canvas id="first-chart"></canvas>
-                      <canvas id="second-chart"></canvas>
-                      <canvas id="third-chart"></canvas>
                   </div>
               </div>
           </div>
