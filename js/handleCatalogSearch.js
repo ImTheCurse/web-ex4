@@ -51,13 +51,12 @@ export async function checkSessionID() {
 
 
         const fileName = location.href.split("/").slice(-1)[0];
-        console.log(role.role)
         if (response.status === 200) {
             if (role.role != 'user' && (fileName == 'simulation.html' || fileName == 'index.html' || fileName == 'simulations.html' ||
-                fileName == 'catalog.html')) {
+                fileName == 'catalog.html' || fileName == 'messagesUser.html')) {
                 window.location.href = 'login.html';
             }
-            if (role.role != 'admin' && (fileName == 'catalogAdmin.html' || fileName == 'stats.html')) {
+            if (role.role != 'admin' && (fileName == 'catalogAdmin.html' || fileName == 'stats.html' || fileName == 'messages.html')) {
                 window.location.href = 'login.html';
             }
             return await id.id;
