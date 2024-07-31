@@ -23,9 +23,17 @@ export async function displayCards(data) {
 
 
         const fileName = location.href.split("/").slice(-1)[0];
-        if (fileName == 'catalogAdmin.html') {
+        if (fileName == 'catalogAdmin.html') 
+        {
             const warningIcon = document.createElement('div');
             warningIcon.id = 'warning-icon';
+            warningIcon.className = "btn btn-primary";
+            warningIcon.setAttribute('data-bs-toggle',"modal");
+            warningIcon.setAttribute('data-bs-target',"#staticBackdrop");
+            warningIcon.style.border = "white"; 
+            warningIcon.style.backgroundColor = "white";
+            warningIcon.style.position = "absolute";
+            warningIcon.style.marginLeft = "0px";
             cardBody.appendChild(warningIcon);
         }
 

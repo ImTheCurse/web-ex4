@@ -42,7 +42,7 @@ function initCardOnClick() {
         const modelDate = elems[i].getElementsByTagName('img')[1].nextSibling.data.trim();
         const modelURL = elems[i].getElementsByTagName('img')[0].src;
 
-        elems[i].addEventListener('click', () => {
+        elems[i].getElementsByTagName('img')[0].addEventListener('click', () => {
             loadSessionVars(modelID, modelName, modelDate, modelURL);
             window.location.href = 'simulation.html';
         });
@@ -72,3 +72,4 @@ function loadSessionVars(modelID, modelName, modelDate, modelURL) {
     sessionStorage.setItem('model-url', modelURL);
     sessionStorage.setItem('model-id', modelID);
 }
+

@@ -2,7 +2,6 @@ window.onload = () => {
     if ('true' === sessionStorage.getItem('input-value-available')) {
         insertInputData();
     }
-
 }
 
 export function handleSearchFromHome() {
@@ -10,8 +9,6 @@ export function handleSearchFromHome() {
     sessionStorage.setItem('input-value', HomeSearchBar.value);
     sessionStorage.setItem('input-value-available', 'true');
     window.location.href = 'catalog.html';
-
-
 }
 
 export function insertInputData() {
@@ -20,7 +17,6 @@ export function insertInputData() {
     newInputBar.focus();
     sessionStorage.removeItem('input-value-available');
     sessionStorage.removeItem('input-value');
-
 }
 
 if (document.getElementById('search-btn-modal') != null) {
@@ -46,8 +42,6 @@ export async function checkSessionID() {
         } else {
             window.location.href = 'login.html';
         }
-
-
     } catch (err) { }
 }
 
