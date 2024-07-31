@@ -23,11 +23,6 @@
               <div alt="logo" id="mobile-logo" class="icons"></div>
             </a>
             <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
-              <!-- <li>
-                <a href="index.html" class="nav-link py-3 border-bottom" aria-current="page" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
-                  <div id="mobile-dashboard-icon" class="icons"></div>
-                </a>
-              </li> -->
               <li>
                 <a href="catalogAdmin.html" class="nav-link active py-3 border-bottom" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
                   <div  id="mobile-basket-icon" class="icons"></div>
@@ -38,19 +33,12 @@
                   <div id="mobile-library-icon" class="icons" ></div>
                 </a>
               </li>
-              <!-- <li>
-                <a href="#" class="nav-link py-3 border-bottom" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Products">
-                  <div id="mobile-progress-icon" class="icons" ></div>
-                </a>
-              </li> -->
             </ul>
             <div class="dropdown border-top">
               <a href="#" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="" alt="mobile-profile-image" id="mobile-profile-image" class="rounded-circle" width="24" height="24">
               </a>
               <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3">
-                <!-- <li><a class="dropdown-item" href="#">My profile</a></li>
-                <li><a class="dropdown-item" href="#">Projects</a></li> -->
                 <li><a class="dropdown-item" href="#">Settings</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="#">Sign out</a></li>
@@ -65,14 +53,6 @@
           </a>
           <hr>
           <ul class="nav nav-pills flex-column mb-auto">
-            <!-- <li>
-              <a href="index.html" class="nav-link text-white" aria-current="page">
-                <span class="nav-icons-span">
-                  <div id="dashboard-icon" class="icons"></div>
-                  <h6>Home</h6>
-                </span>
-              </a>
-            </li> -->
             <li>
               <a href="catalog.html" class="nav-link active">
                 <span class="nav-icons-span">
@@ -89,14 +69,6 @@
                 </span>
               </a>
             </li>
-            <!-- <li>
-              <a href="#" class="nav-link text-white">
-                <span class="nav-icons-span">
-                    <div class="icons" id="progress-icon"></div>
-                    <h6>Progression</h6>
-                </span>
-              </a>
-            </li> -->
           </ul>
           <hr>
           <ul id="nav-util">
@@ -105,16 +77,6 @@
                 <h6>Settings</h6>
               </a>
             </li>
-            <!-- <li>
-              <a href="#" class="nav-link text-white">
-                <h6>Contact us</h6>
-              </a>
-            </li>-->
-            <!-- <li> 
-              <a href="#" class="nav-link text-white">
-                <h6>Help</h6>
-              </a>
-            </li> -->
             <li>
               <a href="#" class="nav-link text-white">
                 <h6>Logout</h6>
@@ -130,10 +92,8 @@
             <div class="container-fluid">
                 <div id="header_title">
                     <h3>Admin view</h3>
-                    <!-- <h5>ex. Airplane, Train, Shoe ...</h5> -->
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <!-- <li class="breadcrumb-item"><a href="index.html">Home</a></li> -->
                             <li class="breadcrumb-item active" aria-current="page">Community catalog</li>
                         </ol>
                     </nav>
@@ -142,6 +102,12 @@
                     <input class="form-control me-2" type="search" id="search_input" placeholder="Search"
                         aria-label="Search">
                 </div>
+                <div id="not">
+                  <a href="#" id="notification">
+                    <span></span>
+                    <span id="badge">3</span>
+                  </a>
+                </div>
                 <div class="dropdown">
                     <a href="#" class="d-flex align-items-center text-black text-decoration-none dropdown-toggle"
                         id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -149,11 +115,6 @@
                         <strong id="user_full_name"></strong>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-                        <!-- <li><a class="dropdown-item" href="#">My Profile</a></li> -->
-                        <!-- <li><a class="dropdown-item" href="#">Projects</a></li> -->
-                        <!-- <li>
-                            <hr class="dropdown-divider">
-                        </li> -->
                         <li><a class="dropdown-item" href="#">Sign out</a></li>
                     </ul>
                 </div>
@@ -171,7 +132,6 @@
                 </div>
                 <div class="modal-body">
                   <div class="mb-3">
-                    <!-- <label for="exampleFormControlTextarea1" id="report-user-name" class="form-label">hello</label> -->
                     <h6 id="report-user-name"></h6>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                   </div>
