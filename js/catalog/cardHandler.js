@@ -21,6 +21,14 @@ export async function displayCards(data) {
         const cardBody = document.createElement('div');
         cardBody.className = 'card-body';
 
+
+        const fileName = location.href.split("/").slice(-1)[0];
+        if (fileName == 'catalogAdmin.html') {
+            const warningIcon = document.createElement('div');
+            warningIcon.id = 'warning-icon';
+            cardBody.appendChild(warningIcon);
+        }
+
         const titleSpan = document.createElement('span');
         titleSpan.id = 'card-title-span';
 
