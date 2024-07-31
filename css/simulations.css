@@ -10,6 +10,26 @@
     width: 4.5rem;
 }
 
+#notification {
+    margin-right: 20px;
+    text-decoration: none;
+    padding: 15px 26px;
+    position: relative;
+    background-image: url('../images/message_icon.svg');
+    background-repeat: no-repeat;
+  }
+  
+  #notification #badge {
+    position: absolute;
+    top: -2px;
+    right: -5px;
+    padding-left: 5px;
+    width: 20px;
+    border-radius: 50%;
+    background: red;
+    color: white;
+  }
+
 @media (max-width: 1025px){
     #mobile-sidebar{
         display: block !important;
