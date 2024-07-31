@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="js/header.js" type="module"></script>
+    <script src="js/simulationsList/handleObjectList.js" type="module"></script>
+    <script src="js/charts/chart.js" type="module"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/simulations.css">
+    <title>AeroSim</title>
+</head>
+<body>
+    <section class="left-section">
+      <nav>
+        <div id="mobile-sidebar">
+          <div id="mobile-sidebar-content" class="d-flex flex-column flex-shrink-0 bg-light">
+            <a href="index.html" class="d-block p-3 link-dark text-decoration-none" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
+              <div alt="logo" id="mobile-logo" class="icons"></div>
+            </a>
+            <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+              <li>
+                <a href="index.html" class="nav-link py-3 border-bottom" aria-current="page" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
+                  <div id="mobile-dashboard-icon" class="icons"></div>
+                </a>
+              </li>
+              <li>
+                <a href="catalog.html" class="nav-link py-3 border-bottom" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
+                  <div  id="mobile-basket-icon" class="icons"></div>
+                </a>
+              </li>
+              <li>
+                <a href="simulations.html" class="nav-link active py-3 border-bottom" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Orders">
+                  <div id="mobile-library-icon" class="icons" ></div>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link py-3 border-bottom" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Products">
+                  <div id="mobile-progress-icon" class="icons" ></div>
+                </a>
+              </li>
+            </ul>
+            <div class="dropdown border-top">
+              <a href="#" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="images/Img_Daniel.png" alt="mobile-profile-image" id="mobile-profile-image" class="rounded-circle" width="24" height="24">
+              </a>
+              <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3">
+                <li><a class="dropdown-item" href="#">My profile</a></li>
+                <li><a class="dropdown-item" href="#">Projects</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Sign out</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-primary" id="left-sidebar">
+          <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            <div alt="logo" id="logo" class="icons"></div>
+            <span class="fs-4"></span>
+          </a>
+          <hr>
+          <ul class="nav nav-pills flex-column mb-auto">
+              <a href="catalogAdmin.html" class="nav-link text-white">
+                <span class="nav-icons-span">
+                    <div class="icons" id="basket-icon"></div>
+                    <h6>Community catalog</h6>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="stats.html" class="nav-link active">
+                <span class="nav-icons-span">
+                  <div class="icons" id="stats-icon"></div>
+                  <h6>Statistics</h6>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <hr>
+          <ul id="nav-util">
+            <li>
+              <a href="#" class="nav-link text-white">
+                <h6>Settings</h6>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link text-white">
+                <h6>Contact us</h6>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link text-white">
+                <h6>Help</h6>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link text-white">
+                <h6>Logout</h6>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+  </section>
+    <section class="right-section">
+      <header>
+        <nav class="navbar_bg-body-tertiary">
+          <div class="container-fluid">
+              <div id="header_title">
+                  <h3 id="Welcome-first_name"></h3>
+                  <h5>Continue your study path from where you left</h5>
+                  <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb">
+                          <li class="breadcrumb-item">Statistics</li>
+                      </ol>
+                  </nav>
+              </div>
+              <div id="search_bar">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              </div>
+              <div class="dropdown">
+                  <a href="#" class="d-flex align-items-center text-black text-decoration-none dropdown-toggle"
+                      id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                      <img src="images/Img_Daniel.png" alt="profile-image" id="profile-image" class="rounded-circle me-2">
+                      <strong id="user_full_name"></strong>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                      <li><a class="dropdown-item" href="#">My Profile</a></li>
+                      <li><a class="dropdown-item" href="#">Projects</a></li>
+                      <li>
+                          <hr class="dropdown-divider">
+                      </li>
+                      <li><a class="dropdown-item" href="#">Sign out</a></li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+      </header>
+      <main>
+        <div class="content-area">
+          <div id="card-container">
+              <div class="card" id="simulations-card">
+                  <div class="card-body">
+                      <span class="card-title-span">
+                          <div id="stats-icon" class="icons"></div>
+                        My Statistics
+                      </span>
+                      <canvas id="first-chart"></canvas>
+                      <canvas id="second-chart"></canvas>
+                      <canvas id="third-chart"></canvas>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </main>
+    </section>
+</body>
+</html>

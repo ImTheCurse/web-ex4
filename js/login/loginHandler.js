@@ -26,7 +26,7 @@ document.getElementById('submit-btn').addEventListener('click', async function()
 
         window.location.href = 'index.html';
     } else {
-        console.log('TO IMPLEMENT');
+        window.location.href = 'catalogAdmin.html'
     }
 
 })
