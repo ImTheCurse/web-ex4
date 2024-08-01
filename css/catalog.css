@@ -68,6 +68,12 @@ body{
     background-image: url('../images/stats-icon.svg');
 }
 
+#mobile-stats-icon{
+    height: 20px;
+    width: 20px;
+    background-image: url('../images/stats-icon.svg');
+}
+
 .left-section{
     width: 300px;
     min-height: 100vh;

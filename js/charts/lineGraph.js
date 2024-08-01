@@ -24,7 +24,7 @@ export async function initLineGraph() {
             legend: { display: false },
             title: {
                 display: true,
-                text: 'Number of students per topic'
+                text: 'Most popular models per views'
             }
         }
     });

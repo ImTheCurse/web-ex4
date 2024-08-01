@@ -21,7 +21,7 @@
         <div id="mobile-sidebar">
           <div id="mobile-sidebar-content" class="d-flex flex-column flex-shrink-0 bg-light" >
             <a href="index.html" class="d-block p-3 link-dark text-decoration-none" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
-              <div alt="logo" id="mobile-logo" class="icons"></div>
+              <div id="mobile-logo" class="icons"></div>
             </a>
             <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
               <li>
@@ -30,7 +30,7 @@
                 </a>
               </li>
               <li>
-                <a href="catalog.html" class="nav-link active py-3 border-bottom" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
+                <a href="catalog.html" class="nav-link py-3 border-bottom" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
                   <div class="icons" id="mobile-basket-icon"></div>
                 </a>
               </li>
@@ -46,16 +46,16 @@
               </li>
             </ul>
             <div id="mobile-controller">
-              <div id="mobile-ZoomOut" class="icons" alt="ZoomOut" draggable="false"></div>
-              <div id="mobile-ZoomIn" class="icons" alt="ZoomIn" draggable="false"></div>
-              <div id="mobile-Backward" class="icons" alt="Backward" draggable="false"></div>
-              <div id="mobile-Forward" class="icons" alt="Forward" draggable="false"></div>
-              <div id="mobile-Expand" class="icons" alt="Expand" draggable="false"></div>
-              <div id="mobile-Curser" class="icons" alt="Curser" draggable="false"></div> 
+              <div id="mobile-ZoomOut" class="icons"  draggable="false"></div>
+              <div id="mobile-ZoomIn" class="icons"  draggable="false"></div>
+              <div id="mobile-Backward" class="icons"  draggable="false"></div>
+              <div id="mobile-Forward" class="icons"  draggable="false"></div>
+              <div id="mobile-Expand" class="icons"  draggable="false"></div>
+              <div id="mobile-Curser" class="icons"  draggable="false"></div> 
             </div>
             <div class="dropdown border-top">
               <a href="#" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="" alt="mobile-profile-image" id="mobile-profile-image" class="rounded-circle" width="24" height="24">
+                <img src="#" alt="mobile-profile-image" id="mobile-profile-image" class="rounded-circle" width="24" height="24">
               </a>
               <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3">
                 <li><a class="dropdown-item" href="#">My profile</a></li>
@@ -67,9 +67,9 @@
             </div>
           </div>
         </div>
-        <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-primary"id="left-sidebar">
+        <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-primary" id="left-sidebar">
           <a href="index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-            <div alt="logo" id="logo" class="icons"></div>
+            <div id="logo" class="icons"></div>
             <span class="fs-4"></span>
           </a>
           <hr>
@@ -77,32 +77,32 @@
             <li>
               <a href="index.html" class="nav-link text-white" aria-current="page">
                 <span class="nav-icons-span">
-                  <div id="dashboard-icon" class="icons"></div>
-                  <h6>Home</h6>
+                  <span id="dashboard-icon" class="icons"></span>
+                  Home
                 </span>
               </a>
             </li>
             <li>
               <a href="catalog.html" class="nav-link text-white">
                 <span class="nav-icons-span">
-                    <div class="icons" id="basket-icon"></div>
-                    <h6>Community catalog</h6>
+                    <span class="icons" id="basket-icon"></span>
+                    Community catalog
                 </span>
               </a>
             </li>
             <li>
               <a href="simulations.html" class="nav-link active">
                 <span class="nav-icons-span">
-                  <div class="icons" id="library-icon"></div>
-                  <h6>Simulations</h6>
+                  <span class="icons" id="library-icon"></span>
+                  Simulations
                 </span>
               </a>
             </li>
             <li>
               <a href="#" class="nav-link text-white">
                 <span class="nav-icons-span">
-                    <div class="icons" id="progress-icon"></div>
-                    <h6>Progression</h6>
+                    <span class="icons" id="progress-icon"></span>
+                    Progression
                 </span>
               </a>
             </li>
@@ -133,7 +133,7 @@
         </div>
       </nav>
   </section>
-  <section class="right-section">
+  <div class="right-section">
     <header>
       <nav class="navbar_bg-body-tertiary">
       <div class="container-fluid">
@@ -154,7 +154,7 @@
         <div class="dropdown">
           <a href="#" class="d-flex align-items-center text-black text-decoration-none dropdown-toggle"
             id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="" alt="profile-image" id="profile-image" class="rounded-circle me-2">
+            <img src="#" alt="profile-image" id="profile-image" class="rounded-circle me-2">
             <strong id="user_full_name"></strong>
           </a>
           <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
@@ -174,19 +174,19 @@
       <div id="simulation-area">
         <div id="simulation-img"></div>
         <div id="hoverController" draggable="true">
-          <div id="ZoomOut" class="icons" alt="ZoomOut" draggable="false"></div>
-          <div id="ZoomIn" class="icons" alt="ZoomIn" draggable="false"></div>
-          <div id="Backward" class="icons" alt="Backward" draggable="false"></div>
-          <div id="Forward" class="icons" alt="Forward" draggable="false"></div>
-          <div id="Expand" class="icons" alt="Expand" draggable="false"></div>
-          <div id="Curser" class="icons" alt="Curser" draggable="false"></div> 
+          <div id="ZoomOut" class="icons"  draggable="false"></div>
+          <div id="ZoomIn" class="icons"  draggable="false"></div>
+          <div id="Backward" class="icons"  draggable="false"></div>
+          <div id="Forward" class="icons"  draggable="false"></div>
+          <div id="Expand" class="icons"  draggable="false"></div>
+          <div id="Curser" class="icons"  draggable="false"></div> 
         </div>
         <div id="sim-sidebar-inputs">
           <div id="sim-sidebar">
             <section id="analysis-section">
-              <div id="left-arrow-icon" class="icons" alt="left-arrow"></div>
+              <div id="left-arrow-icon" class="icons"></div>
               <h2>Analysis</h2>
-              <div id="chart-icon" class="icons" alt="chart-icon"></div>
+              <div id="chart-icon" class="icons" ></div>
             </section>
             <section id="input-section">
               <div id="arrow-inputs" class="icons"></div>
@@ -207,6 +207,6 @@
       </div>
     </div> 
     </main>
-  </section>
+  </div>
 </body>
 </html>

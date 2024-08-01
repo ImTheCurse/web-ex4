@@ -22,7 +22,7 @@
         <div id="mobile-sidebar">
           <div id="mobile-sidebar-content" class="d-flex flex-column flex-shrink-0 bg-light">
             <a href="index.html" class="d-block p-3 link-dark text-decoration-none" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
-              <div alt="logo" id="mobile-logo" class="icons"></div>
+              <div id="mobile-logo" class="icons"></div>
             </a>
             <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
               <li>
@@ -54,7 +54,7 @@
               </div>
             <div class="dropdown border-top">
               <a href="#" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="" alt="mobile-profile-image" id="mobile-profile-image" class="rounded-circle" width="24" height="24">
+                <img src="#" alt="mobile-profile-image" id="mobile-profile-image" class="rounded-circle" width="24" height="24">
               </a>
               <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3">
                 <li><a class="dropdown-item" href="#">My profile</a></li>
@@ -68,7 +68,7 @@
         </div>
           <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-primary" id="left-sidebar">
             <a href="index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-              <div alt="logo" id="logo" class="icons"></div>
+              <div id="logo" class="icons"></div>
               <span class="fs-4"></span>
             </a>
             <hr>
@@ -76,32 +76,32 @@
               <li>
                 <a href="index.html" class="nav-link active" aria-current="page">
                   <span class="nav-icons-span">
-                    <div id="dashboard-icon" class="icons"></div>
-                    <h6>Home</h6>
+                    <span id="dashboard-icon" class="icons"></span>
+                    Home
                   </span>
                 </a>
               </li>
               <li>
                 <a href="catalog.html" class="nav-link text-white">
                   <span class="nav-icons-span">
-                      <div class="icons" id="basket-icon"></div>
-                      <h6>Community catalog</h6>
+                      <span class="icons" id="basket-icon"></span>
+                      Community catalog
                   </span>
                 </a>
               </li>
               <li>
                 <a href="simulations.html" class="nav-link text-white">
                   <span class="nav-icons-span">
-                    <div class="icons" id="library-icon"></div>
-                    <h6>Simulations</h6>
+                    <span class="icons" id="library-icon"></span>
+                    Simulations
                   </span>
                 </a>
               </li>
               <li>
                 <a href="#" class="nav-link text-white">
                   <span class="nav-icons-span">
-                      <div class="icons" id="progress-icon"></div>
-                      <h6>Progression</h6>
+                      <span class="icons" id="progress-icon"></span>
+                      Progression
                   </span>
                 </a>
               </li>
@@ -132,7 +132,7 @@
           </div>
       </nav>
   </section>
-  <section class="right-section">
+  <div class="right-section">
     <header>
       <nav class="navbar_bg-body-tertiary">
         <div class="container-fluid">
@@ -158,7 +158,7 @@
           <div class="dropdown">
             <a href="#" class="d-flex align-items-center text-black text-decoration-none dropdown-toggle"
               id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="" alt="profile-image" id="profile-image" class="rounded-circle me-2">
+              <img src="#" alt="profile-image" id="profile-image" class="rounded-circle me-2">
               <strong id="user_full_name"></strong>
             </a>
             <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
@@ -175,7 +175,7 @@
     </header>
     <main>
       <div class="content-area">
-      <div class="modal fade" id="SearchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="SearchModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -183,7 +183,7 @@
             </div>
             <div class="modal-body">
               <div class="input-group flex-nowrap">
-                <input type="text" class="form-control" id="Search-bar-modal" placeholder="Search Catalog" aria-label="Username" aria-describedby="addon-wrapping" >
+                <input type="text" class="form-control" id="Search-bar-modal" placeholder="Search Catalog" aria-label="Username" >
                   <button class="btn btn-primary" id="search-btn-modal">search</button>
               </div>
             </div>
@@ -194,7 +194,7 @@
         <div class="card" id="progression-card">
           <div class="card-body">
             <span class="card-title-span">
-              <div class="icons" id="study-progress-icon"></div>
+              <span class="icons" id="study-progress-icon"></span>
               Study progression
             </span>
             <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="65" aria-valuemin="0"
@@ -208,25 +208,25 @@
         <div class="card" id="catalog-card">
           <div class="card-body">
             <span class="card-title-span">
-              <div id="catalog-card-icon" class="icons"></div>
+              <span id="catalog-card-icon" class="icons"></span>
               Community Catalog
             </span>
             <span id="catalog-span-card">
-              <div id="explore-btn-icon">
-              <div id="explore-card-icon" class="icons" ></div>
+              <span id="explore-btn-icon">
+              <span id="explore-card-icon" class="icons" ></span>
                   <button id="explore-btn" type="button" class="btn btn-primary">Explore</button>
-              </div>
-              <div id="search-btn-icon">
-                <div id="search-card-icon" class="icons"></div>
+              </span>
+              <span id="search-btn-icon">
+                <span id="search-card-icon" class="icons"></span>
                 <button id="btn-span-2" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#SearchModal">Search</button>
-              </div>
+              </span>
             </span>
           </div>
         </div>
         <div class="card" id="simulations-card">
           <div class="card-body">
             <span class="card-title-span">
-              <div id="library-card-icon" class="icons"></div>
+              <span id="library-card-icon" class="icons"></span>
               My Simulations
             </span>
             <div id="div-table" >
@@ -249,6 +249,6 @@
       </div>
     </div>
     </main>
-  </section>
+  </div>
 </body>
 </html>
